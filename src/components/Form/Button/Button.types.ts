@@ -8,6 +8,7 @@ export type ButtonProps = React.HTMLAttributes<HTMLButtonElement> & {
   fullWidth?: boolean
   disabled?: boolean
   particles?: number
+  playAnimationOnMobile?: boolean
 }
 
 export interface TParticle {

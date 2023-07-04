@@ -44,16 +44,16 @@ const ThemeButtonStyled = styled.div`
   padding: 10px 15px;
   gap: 10px;
   &:hover {
-    background-color: ${({ theme }) => hexToRgbA(theme.colors.primary?.L2, 0.5)};
+    background-color: ${({ theme }) => hexToRgbA(theme.colors.primary.L2, 0.5)};
   }
   
   @media screen and (min-width: ${({ theme }) => theme.breakpoint.md}px) { 
-    background-color: ${({ theme }) => hexToRgbA(theme.colors.primary?.L1, 0.5)};
+    background-color: ${({ theme }) => hexToRgbA(theme.colors.primary.L1, 0.5)};
     padding: 0;
     border-radius: 100%;
     border: 1px solid transparent;  
     &:hover {
-      border: 1px solid ${({ theme }) => theme.colors.primary?.L2};
+      border: 1px solid ${({ theme }) => theme.colors.primary.L2};
     }
   }
   transition: 0.3s all ease-in-out;
@@ -63,22 +63,22 @@ const ThemeButtonStyled = styled.div`
     gap: 10px;
     svg {
       border-radius: 100%;
-      width: 20px;
-      height: 20px;
+      width: 18px;
+      height: 18px;
       @media screen and (min-width: ${({ theme }) => theme.breakpoint.md}px) {
         width: 22px;
         height: 22px;
         padding: 5px;
       }
-      fill: ${({ theme }) => theme.colors.primary?.L4};
+      fill: ${({ theme }) => theme.colors.primary.L4};
       transition: 0.3s all ease-in-out;
     }
     .theme-label {
       margin: 0;
-      font-size: 13px;
+      font-size: 11px;
       font-weight: 400;
       text-transform: capitalize;
-      color: ${({ theme }) => theme.colors.text?.L5};
+      color: ${({ theme }) => theme.colors.text.L5};
   
       @media screen and (min-width: ${({ theme }) => theme.breakpoint.md}px) {
         display: none;

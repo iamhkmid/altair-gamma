@@ -13,6 +13,7 @@ interface TOverviewData {
     label: string
     url: string
     particles: number
+    animation?: boolean
   } |
   {
     key: string
@@ -21,6 +22,7 @@ interface TOverviewData {
     url: string
     icon: React.ReactElement
     particles: number
+    animation?: boolean
   }>
 }
 
@@ -34,7 +36,8 @@ export const overviewData: TOverviewData = {
       variant: 'text',
       label: 'Contact me',
       url: 'https://wa.link/i42azx',
-      particles: 15
+      particles: 15,
+      animation: true
     },
     {
       key: '2',

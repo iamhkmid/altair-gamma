@@ -12,12 +12,14 @@ const Menu = () => {
   const location = useLocation()
   const { menu } = useLoaderData() as TRootLoaderData
   const [activeMenu, setActiveMenu] = React.useState(false)
-  const ref = React.useRef<HTMLUListElement>(null)
+  const refButton = React.useRef<HTMLDivElement>(null)
+  const refContent = React.useRef<HTMLUListElement>(null)
 
   React.useEffect(() => {
     const listener = (event: any) => {
-      if (((ref?.current) == null) || ref?.current?.contains(event.target)) return
-      setActiveMenu(false)
+      if ([refButton, refContent].every((ref) => {
+        return ref?.current !== null && !ref.current.contains(event.target)
+      })) setActiveMenu(false)
     }
     document.addEventListener('mousedown', listener)
     document.addEventListener('touchstart', listener)
@@ -27,7 +29,7 @@ const Menu = () => {
       document.removeEventListener('touchstart', listener)
       document.addEventListener('keyup', listener)
     }
-  }, [ref])
+  }, [refButton, refContent])
 
   const linkClass = (args: TLinkClass) => {
     return args.isActive ? 'active' : args.isPending ? 'pending' : ''
@@ -53,12 +55,12 @@ const Menu = () => {
         </AnimatePresence>
       </div>
       <div className="mobile-menu">
-        <motion.div className="mobile-menu-toggle" onClick={() => { setActiveMenu((prev) => !prev) }}>
+        <motion.div ref={refButton} className="mobile-menu-toggle" onClick={() => { setActiveMenu((prev) => !prev) }}>
           <MenuIcon />
         </motion.div>
         <AnimatePresence>
           {activeMenu && (
-            <motion.ul ref={ref} className="mobile-menu-content" variants={mbToggleVariants} initial="hidden" animate="show" exit="hidden">
+            <motion.ul ref={refContent} className="mobile-menu-content" variants={mbToggleVariants} initial="hidden" animate="show" exit="hidden">
               {menu.map((value) => (
                 <li key={value.key}>
                   <NavLink

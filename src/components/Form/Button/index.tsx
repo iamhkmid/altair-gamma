@@ -31,6 +31,7 @@ const Button = React.forwardRef<Partial<HTMLButtonElement>, ButtonProps>((props,
         $fullWidth={!!fullWidth}
         $isIcon={variant === 'icon'}
         ref={currRef}
+        $playAnimationOnMobile={props.playAnimationOnMobile!}
         className={`AltairButton-root ${variant} ${className}`}
       >
       </ButtonStyled>
@@ -59,7 +60,8 @@ Button.defaultProps = {
   fullWidth: false,
   variant: 'text',
   type: 'button',
-  particles: 5
+  particles: 5,
+  playAnimationOnMobile: false
 }
 
 export default Button

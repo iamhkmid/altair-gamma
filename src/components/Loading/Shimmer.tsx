@@ -26,12 +26,12 @@ const Main = styled.div`
   );
   background-image: -webkit-linear-gradient(
     left,
-    ${({ theme }) => hexToRgbA(theme.colors.text?.L3, 0.01)} 0%,
-    ${({ theme }) => hexToRgbA(theme.colors.text?.L3, 0.1)} 20%,
-    ${({ theme }) => hexToRgbA(theme.colors.text?.L3, 0.3)} 40%,
-    ${({ theme }) => hexToRgbA(theme.colors.text?.L3, 0.3)} 60%,
-    ${({ theme }) => hexToRgbA(theme.colors.text?.L3, 0.1)} 70%,
-    ${({ theme }) => hexToRgbA(theme.colors.text?.L3, 0.01)} 100%
+    ${({ theme }) => hexToRgbA(theme.colors.text.L3, 0.01)} 0%,
+    ${({ theme }) => hexToRgbA(theme.colors.text.L3, 0.1)} 20%,
+    ${({ theme }) => hexToRgbA(theme.colors.text.L3, 0.3)} 40%,
+    ${({ theme }) => hexToRgbA(theme.colors.text.L3, 0.3)} 60%,
+    ${({ theme }) => hexToRgbA(theme.colors.text.L3, 0.1)} 70%,
+    ${({ theme }) => hexToRgbA(theme.colors.text.L3, 0.01)} 100%
   );
   background-repeat: no-repeat;
   background-size: 800px 100%;

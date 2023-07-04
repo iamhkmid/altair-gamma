@@ -80,7 +80,7 @@ const Main = styled(motion.div)`
   top: 0;
   width: 100vw;
   height: 100vh;
-  background-color: ${({ theme }) => hexToRgbA(theme.colors.slate?.L11, 0.9)};
+  background-color: ${({ theme }) => hexToRgbA(theme.colors.slate.L11, 0.9)};
   z-index: 1000;
   
   -webkit-user-select: none; /* Safari */
@@ -111,12 +111,12 @@ const Main = styled(motion.div)`
       cursor: pointer;
       padding: 2px;
       &:hover {
-        background-color: ${({ theme }) => hexToRgbA(theme.colors.rose?.L8, 0.5)};
+        background-color: ${({ theme }) => hexToRgbA(theme.colors.rose.L8, 0.5)};
       }
       transition: 0.3s all ease-in-out;
       > svg {
         width: min(30px, 30px);
-        color: ${({ theme }) => theme.colors.slate?.L2};
+        color: ${({ theme }) => theme.colors.slate.L2};
       }
     }
   }
@@ -140,12 +140,12 @@ const Main = styled(motion.div)`
       padding: 5px;
       cursor: pointer;
       &:hover {
-        background-color: ${({ theme }) => hexToRgbA(theme.colors.primary?.L2, 0.5)};
+        background-color: ${({ theme }) => hexToRgbA(theme.colors.primary.L2, 0.5)};
       }
       transition: 0.3s all ease-in-out;
       > svg {
         width: 30px;
-        color: ${({ theme }) => theme.colors.slate?.L2};
+        color: ${({ theme }) => theme.colors.slate.L2};
       }
     }
   }
@@ -185,12 +185,12 @@ const Main = styled(motion.div)`
         width: 100%;
         height: 5px;
         border-radius: 3px;
-        background-color: ${({ theme }) => hexToRgbA(theme.colors.primary?.L2, 0.5)};
+        background-color: ${({ theme }) => hexToRgbA(theme.colors.primary.L2, 0.5)};
         > div {
           width: 100%;
           height: 5px;
           border-radius: 3px;
-          background-color: ${({ theme }) => hexToRgbA(theme.colors.primary?.L3, 0.7)};
+          background-color: ${({ theme }) => hexToRgbA(theme.colors.primary.L3, 0.7)};
         }
       }
     }

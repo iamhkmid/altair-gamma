@@ -146,12 +146,12 @@ const ProjectStyled = styled.div`
           height: 5px;
           width: 100%;
           border-radius: 3px;
-          background-color: ${({ theme }) => hexToRgbA(theme.colors.primary?.L2, 0.5)};
+          background-color: ${({ theme }) => hexToRgbA(theme.colors.primary.L2, 0.5)};
           > div {
             width: 100%;
             height: 5px;
             border-radius: 3px;
-            background-color: ${({ theme }) => hexToRgbA(theme.colors.primary?.L3, 0.7)};
+            background-color: ${({ theme }) => hexToRgbA(theme.colors.primary.L3, 0.7)};
           }
         }
       }
@@ -219,21 +219,21 @@ const ProjectWrapper = styled(motion.div)`
         align-items: center;
         top: 0;
         z-index: 1;
-        background-color: ${({ theme }) => hexToRgbA(theme.colors.slate?.L11, 0.7)};
+        background-color: ${({ theme }) => hexToRgbA(theme.colors.slate.L11, 0.7)};
         transition: 0.2s all ease-in-out;
         .zoom-icon {
           display: flex;
           align-items: center;
           justify-content: center;
           gap: 5px;
-          color: ${({ theme }) => theme.colors.slate?.L2};
+          color: ${({ theme }) => theme.colors.slate.L2};
           padding: 5px 10px;
           font-size: 12px;
           font-weight: 500;
           height: fit-content;
           width: fit-content;
           border-radius: 10px;
-          background-color: ${({ theme }) => hexToRgbA(theme.colors.slate?.L11, 0.8)};
+          background-color: ${({ theme }) => hexToRgbA(theme.colors.slate.L11, 0.8)};
           svg {
             width: 20px;
             stroke-width: 6px;
@@ -290,7 +290,7 @@ const ProjectWrapper = styled(motion.div)`
             width: 20%;
             height: 3px;
             top: 5px;
-            background-color: ${({ theme }) => theme.colors.primary?.L4};
+            background-color: ${({ theme }) => theme.colors.primary.L4};
             z-index: 1;
             border-radius: 3px;
           }
@@ -303,7 +303,7 @@ const ProjectWrapper = styled(motion.div)`
     flex-direction: column;
     gap: 10px;
     .title {
-      color: ${({ theme }) => theme.colors.text?.L5};
+      color: ${({ theme }) => theme.colors.text.L5};
       margin: 0;
       font-size: 20px;
       font-weight: 600;
@@ -315,7 +315,7 @@ const ProjectWrapper = styled(motion.div)`
       }
     }
     .description {
-      color: ${({ theme }) => theme.colors.text?.L4};
+      color: ${({ theme }) => theme.colors.text.L4};
       margin: 0;
       font-size: 10px;
       font-weight: 300;
@@ -354,7 +354,7 @@ const NavigationBtn = styled.div<TNavigationBtn>`
   user-select: none; /* Standard syntax */
 
   > p:nth-child(1){
-    color: ${({ theme }) => theme.colors.text?.L4};
+    color: ${({ theme }) => theme.colors.text.L4};
     margin: 0;
     font-size: 14px;
     font-weight: 700;
@@ -367,7 +367,7 @@ const NavigationBtn = styled.div<TNavigationBtn>`
     }
   }
   > p:nth-child(2){
-    color: ${({ theme }) => theme.colors.text?.L3};
+    color: ${({ theme }) => theme.colors.text.L3};
     margin: 0;
     font-size: 13px;
     font-weight: 400;
@@ -383,7 +383,7 @@ const NavigationBtn = styled.div<TNavigationBtn>`
   ${({ $disabled }) => $disabled && css`
     pointer-events: none;
     > p:nth-child(1){
-      color: ${({ theme }) => theme.colors.text?.L2};
+      color: ${({ theme }) => theme.colors.text.L2};
     }
   `}
 `

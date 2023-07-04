@@ -32,7 +32,7 @@ const GlowBgStyled = styled.div`
       to bottom right,
       rgba(1, 65, 255, 0),
       rgba(1, 65, 255, 0),
-      ${({ theme }) => hexToRgbA(theme.colors.primary?.L3, 0.5)}
+      ${({ theme }) => hexToRgbA(theme.colors.primary.L3, 0.5)}
     );
     border-radius: 50%;
     width: 600px;
@@ -50,7 +50,7 @@ const GlowBgStyled = styled.div`
     position: absolute;
     filter: blur(45px);
     transform: translateZ(0);
-    background: radial-gradient(${({ theme }) => hexToRgbA(theme.colors.rose?.L9, 0.2)}, rgba(1, 65, 255, 0));
+    background: radial-gradient(${({ theme }) => hexToRgbA(theme.colors.rose.L9, 0.2)}, rgba(1, 65, 255, 0));
     width: 500px;
     height: 500px;
     animation: animate2 10s infinite;

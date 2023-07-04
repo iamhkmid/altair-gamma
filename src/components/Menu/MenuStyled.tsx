@@ -30,7 +30,7 @@ export const MenuStyled = styled(motion.div)`
       margin: 0;
       font-size: 14px;
       font-weight: 500;
-      color: ${({ theme }) => theme.colors.text?.L5};
+      color: ${({ theme }) => theme.colors.text.L5};
       @media screen and (min-width: ${({ theme }) => theme.breakpoint.sm}px) {
         font-size: 16px;
       }
@@ -42,7 +42,7 @@ export const MenuStyled = styled(motion.div)`
       margin: 0;
       font-size: 13px;
       font-weight: 300;
-      color: ${({ theme }) => theme.colors.text?.L4};
+      color: ${({ theme }) => theme.colors.text.L4};
       @media screen and (min-width: ${({ theme }) => theme.breakpoint.sm}px) {
         font-size: 14px;
       }
@@ -68,11 +68,11 @@ export const MenuStyled = styled(motion.div)`
       box-sizing: border-box;
       cursor: pointer;
       &:hover {
-        background-color: ${({ theme }) => hexToRgbA(theme.colors.primary?.L1, 1)};
+        background-color: ${({ theme }) => hexToRgbA(theme.colors.primary.L1, 1)};
       }
       > svg {
         path {
-          color: ${({ theme }) => hexToRgbA(theme.colors.text?.L5!, 0.9)};
+          color: ${({ theme }) => hexToRgbA(theme.colors.text.L5!, 0.9)};
           stroke-width: 40px;
         }
         width: 100%;
@@ -90,7 +90,7 @@ export const MenuStyled = styled(motion.div)`
       list-style-type: none;
       gap: 5px;
       box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
-      background-color: ${({ theme }) => hexToRgbA(theme.colors.text?.L1, 0.9)};
+      background-color: ${({ theme }) => hexToRgbA(theme.colors.text.L1, 0.9)};
       border-radius: 5px;
       li {
         margin: 0;
@@ -108,7 +108,7 @@ export const MenuStyled = styled(motion.div)`
           cursor: pointer;
           outline: none;
           border: none;
-          color: ${({ theme }) => theme.colors.text?.L5};
+          color: ${({ theme }) => theme.colors.text.L5};
           border-bottom: 2px solid transparent;
           border-radius: 5px;
           @media screen and (min-width: ${({ theme }) => theme.breakpoint.sm}px) {
@@ -121,7 +121,7 @@ export const MenuStyled = styled(motion.div)`
         }
         .active {
           .menu-button {
-            background-color: ${({ theme }) => hexToRgbA(theme.colors.primary?.L2, 0.5)};
+            background-color: ${({ theme }) => hexToRgbA(theme.colors.primary.L2, 0.5)};
           }
         }
       }
@@ -154,10 +154,10 @@ export const MenuStyled = styled(motion.div)`
           cursor: pointer;
           outline: none;
           border: none;
-          color: ${({ theme }) => theme.colors.text?.L5};
+          color: ${({ theme }) => theme.colors.text.L5};
           border-bottom: 2px solid transparent;
           &:hover {
-            border-bottom: 2px solid ${({ theme }) => hexToRgbA(theme.colors.primary?.L3, 0.5)};
+            border-bottom: 2px solid ${({ theme }) => hexToRgbA(theme.colors.primary.L3, 0.5)};
           }
           @media screen and (min-width: ${({ theme }) => theme.breakpoint.sm}px) {
             font-size: 13px;
@@ -170,7 +170,7 @@ export const MenuStyled = styled(motion.div)`
       }
       .active {
         .menu-button {
-          border-bottom: 2px solid ${({ theme }) => hexToRgbA(theme.colors.primary?.L3, 0.5)};
+          border-bottom: 2px solid ${({ theme }) => hexToRgbA(theme.colors.primary.L3, 0.5)};
         }
       }
     }

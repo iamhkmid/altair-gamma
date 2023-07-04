@@ -67,7 +67,7 @@ const OverviewCard: React.FC = () => {
           <div className="action">
             {overviewData.action.map((button, idx) => (
               <motion.div initial={{ opacity: 0, x: -20 }} animate={{ opacity: 1, x: 0 }} transition={{ delay: 0.5 * idx, duration: 0.7 }} key={button.key}>
-                <Button variant={button.variant} className={button.variant === 'icon' ? 'icon' : ''} onClick={() => { onClickAction(button.url) }} particles={button.particles} key={button.key}>{button.variant === 'text' ? button.label : button.icon}</Button>
+                <Button variant={button.variant} playAnimationOnMobile={button.animation} className={button.variant === 'icon' ? 'icon' : ''} onClick={() => { onClickAction(button.url) }} particles={button.particles} key={button.key}>{button.variant === 'text' ? button.label : button.icon}</Button>
               </motion.div>
             ))}
           </div>
@@ -90,13 +90,13 @@ const GlowText = styled.span<TGlowText>`
     @property --a {
         syntax: '<color>';
         inherits: false;
-        initial-value: ${theme.colors.text?.L5};
+        initial-value: ${theme.colors.text.L5};
     }
 
     @property --b {
         syntax: '<color>';
         inherits: false;
-        initial-value: ${theme.colors.text?.L5};
+        initial-value: ${theme.colors.text.L5};
     }
   `}
   transition: --a 0.5s, --b 0.5s;
@@ -109,8 +109,8 @@ const GlowText = styled.span<TGlowText>`
     --b: ${textColors[$idx][1]};
   `}
   ${({ $active, theme }) => !$active && css`
-    --a: ${theme.colors.text?.L5};
-    --b: ${theme.colors.text?.L5};
+    --a: ${theme.colors.text.L5};
+    --b: ${theme.colors.text.L5};
   `}
 `
 
@@ -145,7 +145,7 @@ const OverviewCardStyled = styled.div`
         to bottom right,
         rgba(1, 65, 255, 0),
         rgba(1, 65, 255, 0),
-        ${({ theme }) => hexToRgbA(theme.colors.primary?.L3, 0.5)}
+        ${({ theme }) => hexToRgbA(theme.colors.primary.L3, 0.5)}
       );
       border-radius: 50%;
       width: 100%;
@@ -235,7 +235,7 @@ const OverviewCardStyled = styled.div`
     }
   }
   .text1 {
-    color: ${({ theme }) => theme.colors.text?.L4};
+    color: ${({ theme }) => theme.colors.text.L4};
     font-size: 15px;
     font-weight: 700;
     margin: 0;
@@ -271,7 +271,7 @@ const OverviewCardStyled = styled.div`
     }
   }
   .description {
-    color: ${({ theme }) => theme.colors.text?.L4};
+    color: ${({ theme }) => theme.colors.text.L4};
     font-size: 10px;
     font-weight: 400;
     margin: 0;
@@ -312,7 +312,7 @@ const OverviewCardStyled = styled.div`
     position: absolute;
     filter: blur(45px);
     transform: translateZ(0);
-    background: radial-gradient(${({ theme }) => hexToRgbA(theme.colors.rose?.L9, 0.25)}, rgba(1, 65, 255, 0));
+    background: radial-gradient(${({ theme }) => hexToRgbA(theme.colors.rose.L9, 0.25)}, rgba(1, 65, 255, 0));
     width: 500px;
     height: 500px;
     z-index: 2;
@@ -325,7 +325,7 @@ const OverviewCardStyled = styled.div`
     top: 0%;
     position: absolute;
     filter: blur(45px);
-    background: radial-gradient(${({ theme }) => hexToRgbA(theme.colors.rose?.L9, 0.2)}, rgba(1, 65, 255, 0));
+    background: radial-gradient(${({ theme }) => hexToRgbA(theme.colors.rose.L9, 0.2)}, rgba(1, 65, 255, 0));
     width: 300px;
     height: 300px;
     z-index: 2;
