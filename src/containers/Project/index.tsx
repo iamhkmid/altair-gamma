@@ -179,6 +179,7 @@ const ProjectWrapper = styled(motion.div)`
     display: flex;
     flex-direction: column;
     gap: 5px;
+    width: calc(100% - 2px);
     .current-image {
       width: 100%;
       border-radius: 5px;
@@ -192,7 +193,7 @@ const ProjectWrapper = styled(motion.div)`
         height: calc(400px / 16 * 9);
       }
       @media screen and (min-width: ${({ theme }) => theme.breakpoint.xxxl}px) {
-        width: calc(600px -2px);
+        width: 100%;
         height: calc(600px / 16 * 9);
       }
       position: relative;
@@ -205,6 +206,7 @@ const ProjectWrapper = styled(motion.div)`
       .AltairImage-root {
         width: 100%;
         height: 100%;
+        border-radius: 5px;
         transition: 0.3s all ease-in-out;
       }
       .image-zoom {
@@ -362,7 +364,7 @@ const NavigationBtn = styled.div<TNavigationBtn>`
     @media screen and (min-width: ${({ theme }) => theme.breakpoint.md}px) {
       font-size: 14px;
     }
-    @media screen and (min-width: ${({ theme }) => theme.breakpoint.lg}px) {
+    @media screen and (min-width: ${({ theme }) => theme.breakpoint.xxxl}px) {
       font-size: 18px;
     }
   }
@@ -375,7 +377,7 @@ const NavigationBtn = styled.div<TNavigationBtn>`
     @media screen and (min-width: ${({ theme }) => theme.breakpoint.md}px) {
       font-size: 13px;
     }
-    @media screen and (min-width: ${({ theme }) => theme.breakpoint.lg}px) {
+    @media screen and (min-width: ${({ theme }) => theme.breakpoint.xxxl}px) {
       font-size: 16px;
     }
   }
