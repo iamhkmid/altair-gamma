@@ -186,6 +186,7 @@ const ProjectWrapper = styled(motion.div)`
       overflow: hidden;
       width: 100%;
       border: 1px solid ${({ theme }) => theme.variant === "light" ? theme.colors.primary.L2 : "transparent"};
+      box-sizing: border-box;
       height: calc(100vw / 16 * 9 - 20px);
       transition: 0.3s all ease-in-out;
       @media screen and (min-width: ${({ theme }) => theme.breakpoint.md}px) {
@@ -255,6 +256,7 @@ const ProjectWrapper = styled(motion.div)`
         position: relative;
         margin-bottom: 10px;
         border-radius: 5px;
+        box-sizing: border-box;
         overflow: hidden;
         border: 1px solid ${({ theme }) => theme.variant === "light" ? theme.colors.primary.L2 : "transparent"};
         --numOfView: 5;
