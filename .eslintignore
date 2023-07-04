@@ -1,0 +1,4 @@
+node_modules
+public
+buildnpm i husky lint-staged -D
+config-overrides.js
