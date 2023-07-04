@@ -13,7 +13,7 @@ const Project = () => {
   const [showImage, setShowImage] = React.useState(false)
   const project = projects.find((value) => value.id === preview.key)
 
-  const srcImgViewer = React.useMemo(() => ((projects.find((item) => item.id === preview.key)?.images) != null) || [], [preview.key])
+  const srcImgViewer = React.useMemo(() => (projects.find((item) => item.id === preview.key)?.images) || [], [preview.key])
 
   const navigation = React.useMemo(() => {
     const prevIdx = projects.findIndex((item) => item.id === preview.key) - 1

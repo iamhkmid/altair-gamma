@@ -93,7 +93,7 @@ export const ButtonStyled = styled.button<TButton>`
     font-size: 15px;
   }
 
-  background-color: ${({ theme }) => hexToRgbA(theme.variant === 'dark' ? theme.colors?.primary?.L11 : theme.colors?.primary?.L2, 0.8)};
+  background-color: ${({ theme }) => hexToRgbA(theme.variant === 'dark' ? theme.colors?.primary?.L1 : theme.colors?.primary?.L2, 0.8)};
   color: ${({ theme }) => theme.colors?.text?.L3};
   border: 2px solid transparent;
 

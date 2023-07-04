@@ -68,7 +68,7 @@ export const MenuStyled = styled(motion.div)`
       box-sizing: border-box;
       cursor: pointer;
       &:hover {
-        background-color: ${({ theme }) => hexToRgbA(theme.colors.primary?.L11, 1)};
+        background-color: ${({ theme }) => hexToRgbA(theme.colors.primary?.L1, 1)};
       }
       > svg {
         path {

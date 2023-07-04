@@ -48,7 +48,7 @@ const ThemeButtonStyled = styled.div`
   }
   
   @media screen and (min-width: ${({ theme }) => theme.breakpoint.md}px) { 
-    background-color: ${({ theme }) => hexToRgbA(theme.colors.primary?.L11, 0.5)};
+    background-color: ${({ theme }) => hexToRgbA(theme.colors.primary?.L1, 0.5)};
     padding: 0;
     border-radius: 100%;
     border: 1px solid transparent;  
