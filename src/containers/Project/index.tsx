@@ -49,10 +49,9 @@ const Project = () => {
                     <motion.div
                       key={img}
                       className="current-image"
-                      variants={previewVariants}
-                      initial={preview.type}
-                      animate="show"
-                      exit={preview.type}
+                      initial={{ opacity: 0 }}
+                      animate={{ opacity: 1 }}
+                      exit={{ opacity: 0 }}
                       layoutId="image-viewer"
                       onClick={() => { setShowImage(true) }}
                     >
@@ -181,25 +180,22 @@ const ProjectWrapper = styled(motion.div)`
     flex-direction: column;
     gap: 5px;
     .current-image {
-      box-sizing: border-box;
+      width: 100%;
       border-radius: 5px;
       overflow: hidden;
-      width: 100%;
-      border: 1px solid ${({ theme }) => theme.variant === "light" ? theme.colors.primary.L2 : "transparent"};
       box-sizing: border-box;
       height: calc(100vw / 16 * 9 - 20px);
+      border: 1px solid ${({ theme }) => theme.variant === "light" ? theme.colors.primary.L2 : "transparent"};
       transition: 0.3s all ease-in-out;
       @media screen and (min-width: ${({ theme }) => theme.breakpoint.md}px) {
-        width: 400px;
+        width: calc(400px - 2px);
         height: calc(400px / 16 * 9);
       }
       @media screen and (min-width: ${({ theme }) => theme.breakpoint.xxxl}px) {
-        width: 600px;
+        width: calc(600px -2px);
         height: calc(600px / 16 * 9);
       }
       position: relative;
-      border-radius: 5px;
-      box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
       overflow: hidden;
       &:hover {
         .image-zoom {
@@ -249,32 +245,26 @@ const ProjectWrapper = styled(motion.div)`
       }
     }
     .image-list {
-      display: flex;
-      flex-wrap: wrap;
+      display: grid;
+      grid-template-columns: repeat(5, minmax(50px, 1fr));
       gap: 5px;
+      width: calc(100% - 5px);
       .image-wrapper{
+        display: flex;
+        flex-direction: column;
         position: relative;
         margin-bottom: 10px;
-        border-radius: 5px;
         box-sizing: border-box;
-        overflow: hidden;
-        border: 1px solid ${({ theme }) => theme.variant === "light" ? theme.colors.primary.L2 : "transparent"};
+        border-radius: 5px;
         --numOfView: 5;
-        width: calc((100vw - 61px) / var(--numOfView));
-        height: calc((100vw - 61px) / var(--numOfView) / 16 * 9);
+        aspect-ratio: 16/9;
         transition: 0.3s all ease-in-out;
-        @media screen and (min-width: ${({ theme }) => theme.breakpoint.md}px) {
-          width: 70px;
-          height: calc(70px / 16 * 9);
-        }
-        @media screen and (min-width: ${({ theme }) => theme.breakpoint.xxxl}px) {
-          width: 100px;
-          height: calc(100px / 16 * 9);
-        }
         &.active {
           opacity: 1;
         }
         .AltairImage-root {
+          border-radius: 5px;
+          border: 1px solid ${({ theme }) => theme.variant === "light" ? theme.colors.primary.L2 : "transparent"};
           width: 100%;
           height: 100%;
           overflow: hidden;
@@ -290,7 +280,9 @@ const ProjectWrapper = styled(motion.div)`
           display: flex;
           justify-content: center;
           width: 100%;
-          position: relative;
+          left: 0;
+          bottom: -5px;
+          position: absolute;
           &::before {
             content: "";
             display: flex;
