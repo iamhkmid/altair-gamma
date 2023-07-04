@@ -317,11 +317,11 @@ const ProjectWrapper = styled(motion.div)`
     .description {
       color: ${({ theme }) => theme.colors.text.L4};
       margin: 0;
-      font-size: 10px;
+      font-size: 11px;
       font-weight: 300;
       height: 50px;
-      @media screen and (min-width: ${({ theme }) => theme.breakpoint.sm}px) {
-        font-size: 13px;
+      @media screen and (min-width: ${({ theme }) => theme.breakpoint.md}px) {
+        font-size: 12px;
       }
       @media screen and (min-width: ${({ theme }) => theme.breakpoint.xxxl}px) {
         font-size: 16px;
@@ -356,10 +356,10 @@ const NavigationBtn = styled.div<TNavigationBtn>`
   > p:nth-child(1){
     color: ${({ theme }) => theme.colors.text.L4};
     margin: 0;
-    font-size: 14px;
+    font-size: 13px;
     font-weight: 700;
     transition: 0.3s all ease-in-out;
-    @media screen and (min-width: ${({ theme }) => theme.breakpoint.lg}px) {
+    @media screen and (min-width: ${({ theme }) => theme.breakpoint.md}px) {
       font-size: 14px;
     }
     @media screen and (min-width: ${({ theme }) => theme.breakpoint.lg}px) {
@@ -369,10 +369,10 @@ const NavigationBtn = styled.div<TNavigationBtn>`
   > p:nth-child(2){
     color: ${({ theme }) => theme.colors.text.L3};
     margin: 0;
-    font-size: 13px;
+    font-size: 12px;
     font-weight: 400;
     transition: 0.3s all ease-in-out;
-    @media screen and (min-width: ${({ theme }) => theme.breakpoint.lg}px) {
+    @media screen and (min-width: ${({ theme }) => theme.breakpoint.md}px) {
       font-size: 13px;
     }
     @media screen and (min-width: ${({ theme }) => theme.breakpoint.lg}px) {
