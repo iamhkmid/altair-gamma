@@ -9,7 +9,7 @@ const Experience = () => {
 
   return (
     <ExperienceStyled variants={variants} initial="hidden" animate="visible" exit="hidden" transition={{ duration: 0.3 }}>
-      <h1 style={{ color: 'white' }}>Coming soon..</h1>
+      <h1>Coming soon..</h1>
     </ExperienceStyled>
   )
 }
@@ -22,4 +22,7 @@ const ExperienceStyled = styled(motion.div)`
   height: 100%;
   justify-content: center;
   align-items: center;
+  > h1 {
+    color: ${({theme})=>theme.colors.text.L5};
+  }
 `
