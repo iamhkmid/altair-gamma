@@ -182,8 +182,12 @@ const ProjectWrapper = styled(motion.div)`
     gap: 5px;
     .current-image {
       box-sizing: border-box;
+      border-radius: 5px;
+      overflow: hidden;
       width: 100%;
+      border: 1px solid ${({ theme }) => theme.variant === "light" ? theme.colors.primary.L2 : "transparent"};
       height: calc(100vw / 16 * 9 - 20px);
+      transition: 0.3s all ease-in-out;
       @media screen and (min-width: ${({ theme }) => theme.breakpoint.md}px) {
         width: 400px;
         height: calc(400px / 16 * 9);
@@ -194,6 +198,7 @@ const ProjectWrapper = styled(motion.div)`
       }
       position: relative;
       border-radius: 5px;
+      box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
       overflow: hidden;
       &:hover {
         .image-zoom {
@@ -203,8 +208,6 @@ const ProjectWrapper = styled(motion.div)`
       .AltairImage-root {
         width: 100%;
         height: 100%;
-        border-radius: 5px;
-        overflow: hidden;
         transition: 0.3s all ease-in-out;
       }
       .image-zoom {
@@ -251,9 +254,13 @@ const ProjectWrapper = styled(motion.div)`
       .image-wrapper{
         position: relative;
         margin-bottom: 10px;
+        border-radius: 5px;
+        overflow: hidden;
+        border: 1px solid ${({ theme }) => theme.variant === "light" ? theme.colors.primary.L2 : "transparent"};
         --numOfView: 5;
         width: calc((100vw - 61px) / var(--numOfView));
         height: calc((100vw - 61px) / var(--numOfView) / 16 * 9);
+        transition: 0.3s all ease-in-out;
         @media screen and (min-width: ${({ theme }) => theme.breakpoint.md}px) {
           width: 70px;
           height: calc(70px / 16 * 9);
@@ -268,7 +275,6 @@ const ProjectWrapper = styled(motion.div)`
         .AltairImage-root {
           width: 100%;
           height: 100%;
-          border-radius: 5px;
           overflow: hidden;
           transition: 0.3s all ease-in-out;
         }
