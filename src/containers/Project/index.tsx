@@ -205,11 +205,6 @@ const ProjectWrapper = styled(motion.div)`
           opacity: 1;
         }
       }
-      .AltairImage-root {
-        border-radius: 5px;
-        overflow: hidden;
-        transition: 0.3s all ease-in-out;
-      }
       .under-development {
         display: flex;
         pointer-events: none;
@@ -301,7 +296,7 @@ const ProjectWrapper = styled(motion.div)`
       display: grid;
       grid-template-columns: repeat(5, minmax(50px, 1fr));
       gap: 5px;
-      width: calc(100% - 5px);
+      width: 100%;
       .image-wrapper{
         display: flex;
         flex-direction: column;
@@ -309,19 +304,12 @@ const ProjectWrapper = styled(motion.div)`
         margin-bottom: 10px;
         box-sizing: border-box;
         border-radius: 5px;
-        --numOfView: 5;
+        overflow: hidden;
         aspect-ratio: 16/9;
+        border: 1px solid ${({ theme }) => theme.variant === "light" ? theme.colors.primary.L2 : "transparent"};
         transition: 0.3s all ease-in-out;
         &.active {
           opacity: 1;
-        }
-        .AltairImage-root {
-          border-radius: 5px;
-          border: 1px solid ${({ theme }) => theme.variant === "light" ? theme.colors.primary.L2 : "transparent"};
-          width: 100%;
-          height: 100%;
-          overflow: hidden;
-          transition: 0.3s all ease-in-out;
         }
         cursor: pointer;
         opacity: 0.6;
