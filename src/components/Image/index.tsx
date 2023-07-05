@@ -19,7 +19,7 @@ const Image: React.FC<ImageProps> = (props) => {
         )}
       </AnimatePresence>
       <motion.div initial={{ opacity: 0 }} animate={{ opacity: loading ? 0 : 1 }}>
-        <img {...props} alt={props.alt} onLoad={() => { }} />
+        <img {...props} alt={props.alt} onLoad={() => { setLoading(false) }} />
       </motion.div>
     </Main>
   )
