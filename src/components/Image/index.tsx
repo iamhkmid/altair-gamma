@@ -38,7 +38,8 @@ const Main = styled.div`
   > div {
     display: flex;
     > img {
-      object-fit: cover;
+      /* object-fit: cover; */
+      align-self: flex-start;
     }
   }
 `

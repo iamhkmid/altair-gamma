@@ -41,10 +41,10 @@ export const projects = [
     description: 'Jconnect is an internet banking website with features including general information about savings/current accounts, time deposit accounts, account mutation information, fund transfers, both transfers between accounts and between banks, purchases, payments, etc.',
     images: [
       '/projects/jatim1.png',
-      '/projects/jatim2.png',
-      '/projects/jatim3.png',
-      '/projects/jatim4.png',
-      '/projects/jatim5.png'
+      // '/projects/jatim2.png',
+      // '/projects/jatim3.png',
+      // '/projects/jatim4.png',
+      // '/projects/jatim5.png'
     ]
   }
 ]
