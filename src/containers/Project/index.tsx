@@ -188,7 +188,7 @@ const ProjectWrapper = styled(motion.div)`
       border-radius: 5px;
       overflow: hidden;
       box-sizing: border-box;
-      height: calc(100vw / 16 * 9 - 20px);
+      height: calc(100vw / 16 * 9 - 22px);
       border: 1px solid ${({ theme }) => theme.variant === "light" ? theme.colors.primary.L2 : "transparent"};
       transition: 0.3s border ease-in-out;
       @media screen and (min-width: ${({ theme }) => theme.breakpoint.md}px) {
@@ -206,9 +206,8 @@ const ProjectWrapper = styled(motion.div)`
         }
       }
       .AltairImage-root {
-        width: 100%;
-        height: 100%;
         border-radius: 5px;
+        overflow: hidden;
         transition: 0.3s all ease-in-out;
       }
       .under-development {
