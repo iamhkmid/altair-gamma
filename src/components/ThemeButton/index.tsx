@@ -76,7 +76,7 @@ const ThemeButtonStyled = styled.div`
     .theme-label {
       margin: 0;
       font-size: 11px;
-      font-weight: 400;
+      font-weight: 600;
       text-transform: capitalize;
       color: ${({ theme }) => theme.colors.text.L5};
   

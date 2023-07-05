@@ -101,7 +101,7 @@ export const MenuStyled = styled(motion.div)`
         .menu-button {
           text-align: start;
           font-size: 11px;
-          font-weight: 400;
+          font-weight: 600;
           background-color: transparent;
           padding: 10px 20px;
           width: 100%;
@@ -148,7 +148,7 @@ export const MenuStyled = styled(motion.div)`
         }
         .menu-button {
           font-size: 11px;
-          font-weight: 400;
+          font-weight: 600;
           background-color: transparent;
           padding: 10px 20px;
           cursor: pointer;
