@@ -392,7 +392,7 @@ const NavigationBtn = styled.div<TNavigationBtn>`
   border-radius: 5px;
   @media (hover: hover) {
     &:hover {
-      background-color: ${({ theme }) => hexToRgbA(theme.colors.primary.L3, 0.1)};
+      background-color: ${({ theme }) => hexToRgbA(theme.colors.primary.L3, 0.15)};
     }
   }
   ${({ $disabled, $type }) => !$disabled && css`
