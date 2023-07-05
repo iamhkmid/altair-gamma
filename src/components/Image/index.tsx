@@ -35,7 +35,10 @@ const Main = styled.div`
   display: flex;
   position: relative;
   background-color: ${({ theme }) => hexToRgbA(theme.colors.text.L1, 0.2)};
+  height: 100%;
+  width: 100%;
   > div {
+    display: flex;
     > img {
       max-width:100%;
       max-height:100%;

@@ -34,7 +34,6 @@ const Main = styled.div`
     ${({ theme }) => hexToRgbA(theme.colors.text.L3, 0.01)} 100%
   );
   background-repeat: no-repeat;
-
   height: 100%;
   width: 100%;
 
