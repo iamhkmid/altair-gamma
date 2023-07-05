@@ -410,9 +410,13 @@ const NavigationBtn = styled.div<TNavigationBtn>`
       content: "";
       filter: blur(15px);
       background: radial-gradient(${({ theme }) => hexToRgbA(theme.colors.primary.L3, 0.8)}, rgba(1, 65, 255, 0));
-      width: 50px;
-      height: 35px;
       opacity: 0;
+      width: 35px;
+      height: 30px;
+      @media screen and (min-width: ${({ theme }) => theme.breakpoint.sm}px) {
+        width: 50px;
+        height: 35px;
+      }
       animation: animateNav 10s infinite ${$type === "next" ? "1s" : "0s"};
       @keyframes animateNav {
         0%   {  opacity: 0; }
