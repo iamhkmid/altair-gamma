@@ -12,7 +12,7 @@ export const darkColors: TColors = {
     L1: '#1e293b',
     L2: '#334155',
     L3: '#64748b',
-    L4: '#e2e8f0',
+    L4: '#cbd5e1',
     L5: '#ffffff'
   },
   rose: {
