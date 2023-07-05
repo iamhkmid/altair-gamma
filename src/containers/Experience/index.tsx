@@ -23,6 +23,6 @@ const ExperienceStyled = styled(motion.div)`
   justify-content: center;
   align-items: center;
   > h1 {
-    color: ${({theme})=>theme.colors.text.L5};
+    color: ${({ theme }) => theme.colors.text.L5};
   }
 `
