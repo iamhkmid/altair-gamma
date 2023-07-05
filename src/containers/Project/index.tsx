@@ -417,7 +417,7 @@ const NavigationBtn = styled.div<TNavigationBtn>`
         width: 50px;
         height: 35px;
       }
-      animation: animateNav 10s infinite ${$type === "next" ? "1s" : "0s"};
+      animation: animateNav 10s infinite ${$type === "next" ? "0s" : "3s"};
       @keyframes animateNav {
         0%   {  opacity: 0; }
         40%   {  opacity: 0; }
