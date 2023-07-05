@@ -81,14 +81,16 @@ export const ButtonStyled = styled.button<TButton>`
   box-shadow: 0px 6px 6px ${({ theme }) => theme.colors?.primary.L3} 10;
   box-sizing: border-box;
   cursor: pointer;
-  font-weight: 400;
-  font-size: 12px;
+  font-weight: 600;
+  font-size: 11px;
   margin: 0;
-  padding: 8px 12px;
+  height: 38px;
+  padding: 0 15px;
   width: ${({ $fullWidth }) => ($fullWidth ? '100%' : 'auto')};
 
   ${({ $isIcon }) => $isIcon && css`
-    padding: 10px;
+    padding: 0 10px;
+    aspect-ratio: 1/1;
     border-radius: 100%;
   `};
 
@@ -108,14 +110,16 @@ export const ButtonStyled = styled.button<TButton>`
   }
 
   
-  @media screen and (min-width: ${({ theme }) => theme.breakpoint?.sm}px){
-    font-weight: 500;
-    padding: 10px 15px;
+  @media screen and (min-width: ${({ theme }) => theme.breakpoint?.md}px){
+    padding: 0 17px;
+    height: 42px;
     font-size: 13px;
+    ${({ $isIcon }) => $isIcon && css`
+      padding: 12px;
+    `};
   }
   @media screen and (min-width: ${({ theme }) => theme.breakpoint?.xxxl}px){
-    font-weight: 500;
-    font-size: 15px;
+    font-size: 14px;
   }
 
   background-color: ${({ theme }) => hexToRgbA(theme.variant === 'dark' ? theme.colors?.primary.L1 : theme.colors?.primary.L2, 0.8)};

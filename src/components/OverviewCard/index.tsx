@@ -220,14 +220,13 @@ const OverviewCardStyled = styled.div`
           justify-content: flex-start;
         }
         .AltairButton-root {
-          &.icon {
-            padding: 10px;
-          }
           svg {
             width: 14px;
+            height: 14px;
             fill: currentColor;
             @media screen and (min-width: ${({ theme }) => theme.breakpoint.md}px) {
               width: 18px;
+              height: 18px;
             }
           }
         }
