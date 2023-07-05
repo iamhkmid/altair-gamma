@@ -387,7 +387,10 @@ const NavigationBtn = styled.div<TNavigationBtn>`
   width: fit-content;
   padding: 10px;
   gap: 5px;
-  width: 200px;
+  width: 100%;
+  @media screen and (min-width: ${({ theme }) => theme.breakpoint.sm}px) {
+    width: 200px;
+  }
   justify-self: ${({ $type }) => $type === "prev" ? "end" : "start"};
   border-radius: 5px;
   @media (hover: hover) {
