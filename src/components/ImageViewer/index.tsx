@@ -115,7 +115,8 @@ const Main = styled(motion.div)`
       }
       transition: 0.3s all ease-in-out;
       > svg {
-        width: min(30px, 30px);
+        width: 30px;
+        height: 30px;
         color: ${({ theme }) => theme.colors.slate.L2};
       }
     }

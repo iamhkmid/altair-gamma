@@ -234,7 +234,7 @@ const ProjectWrapper = styled(motion.div)`
           font-weight: 500;
           border-radius: 10px;
           background-color: ${({ theme }) => hexToRgbA(theme.colors.slate.L11, 0.8)};
-          svg {
+          > svg {
             width: 20px;
             height: 20px;
             stroke-width: 6px;
