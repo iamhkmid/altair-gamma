@@ -182,7 +182,7 @@ const ProjectWrapper = styled(motion.div)`
     display: flex;
     flex-direction: column;
     gap: 5px;
-    width: calc(100% - 2px);
+    width: 100%;
     .current-image {
       width: 100%;
       border-radius: 5px;
@@ -192,7 +192,7 @@ const ProjectWrapper = styled(motion.div)`
       border: 1px solid ${({ theme }) => theme.variant === "light" ? theme.colors.primary.L2 : "transparent"};
       transition: 0.3s border ease-in-out;
       @media screen and (min-width: ${({ theme }) => theme.breakpoint.md}px) {
-        width: calc(400px - 2px);
+        width: 100%;
         height: calc(400px / 16 * 9);
       }
       @media screen and (min-width: ${({ theme }) => theme.breakpoint.xxxl}px) {
@@ -200,7 +200,6 @@ const ProjectWrapper = styled(motion.div)`
         height: calc(600px / 16 * 9);
       }
       position: relative;
-      overflow: hidden;
       &:hover {
         .image-zoom {
           opacity: 1;
