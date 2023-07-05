@@ -40,6 +40,8 @@ const RootStyled = styled.div`
   display: grid;
   grid-template-rows: 1fr auto;
   height: min(100vh, 100vh);
+  width: 100vw;
+  max-width: 100vw;
   position: relative;
   overflow: hidden;
   box-sizing: border-box;
