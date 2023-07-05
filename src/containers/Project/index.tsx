@@ -187,7 +187,7 @@ const ProjectWrapper = styled(motion.div)`
       box-sizing: border-box;
       height: calc(100vw / 16 * 9 - 20px);
       border: 1px solid ${({ theme }) => theme.variant === "light" ? theme.colors.primary.L2 : "transparent"};
-      transition: 0.3s all ease-in-out;
+      transition: 0.3s border ease-in-out;
       @media screen and (min-width: ${({ theme }) => theme.breakpoint.md}px) {
         width: calc(400px - 2px);
         height: calc(400px / 16 * 9);
@@ -222,7 +222,7 @@ const ProjectWrapper = styled(motion.div)`
         top: 0;
         z-index: 1;
         background-color: ${({ theme }) => hexToRgbA(theme.colors.slate.L11, 0.7)};
-        transition: 0.2s all ease-in-out;
+        transition: 0.2s background-color ease-in-out;
         .zoom-icon {
           display: flex;
           align-items: center;
