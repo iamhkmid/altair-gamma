@@ -23,28 +23,28 @@ export const projects = [
       '/projects/ubb5.png'
     ]
   },
-  {
-    id: '3',
-    title: 'Bank Victoria',
-    description: 'Bank Victoria is an internet banking website with features including general information about savings/current accounts, time deposit accounts, account mutation information, fund transfers, both transfers between accounts and between banks, purchases, payments, etc.',
-    images: [
-      '/projects/bvic1.png',
-      '/projects/bvic2.png',
-      '/projects/bvic3.png',
-      '/projects/bvic4.png',
-      '/projects/bvic5.png'
-    ]
-  },
-  {
-    id: '4',
-    title: 'JConnect (Bank Jatim)',
-    description: 'Jconnect is an internet banking website with features including general information about savings/current accounts, time deposit accounts, account mutation information, fund transfers, both transfers between accounts and between banks, purchases, payments, etc.',
-    images: [
-      '/projects/jatim1.png',
-      // '/projects/jatim2.png',
-      // '/projects/jatim3.png',
-      // '/projects/jatim4.png',
-      // '/projects/jatim5.png'
-    ]
-  }
+  // {
+  //   id: '3',
+  //   title: 'Bank Victoria',
+  //   description: 'Bank Victoria is an internet banking website with features including general information about savings/current accounts, time deposit accounts, account mutation information, fund transfers, both transfers between accounts and between banks, purchases, payments, etc.',
+  //   images: [
+  //     '/projects/bvic1.png',
+  //     '/projects/bvic2.png',
+  //     '/projects/bvic3.png',
+  //     '/projects/bvic4.png',
+  //     '/projects/bvic5.png'
+  //   ]
+  // },
+  // {
+  //   id: '4',
+  //   title: 'JConnect (Bank Jatim)',
+  //   description: 'Jconnect is an internet banking website with features including general information about savings/current accounts, time deposit accounts, account mutation information, fund transfers, both transfers between accounts and between banks, purchases, payments, etc.',
+  //   images: [
+  //     '/projects/jatim1.png',
+  //     '/projects/jatim2.png',
+  //     '/projects/jatim3.png',
+  //     '/projects/jatim4.png',
+  //     '/projects/jatim5.png'
+  //   ]
+  // }
 ]
