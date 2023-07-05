@@ -234,7 +234,7 @@ const ProjectWrapper = styled(motion.div)`
           color: ${({ theme }) => theme.colors.text.L5};
           padding: 8px 13px;
           text-transform: uppercase;
-          font-size: 14px;
+          font-size: 11px;
           font-weight: 700;
           border-radius: 10px;
           background: ${({ theme }) => hexToRgbA(theme.colors.text.L1, 0.7)};
@@ -244,8 +244,12 @@ const ProjectWrapper = styled(motion.div)`
           }
           border: 1px solid ${({ theme }) => hexToRgbA(theme.colors.text.L5, 0.2)};
           svg.loader {
-            width: 35px;
-            height: 35px;
+            width: 25px;
+            height: 25px;
+            @media screen and (min-width: ${({ theme }) => theme.breakpoint.xxxl}px) {
+              width: 35px;
+              height: 35px;
+            }
             > defs > linearGradient stop {
               stop-color: ${({ theme }) => theme.colors.text.L5};
             }
