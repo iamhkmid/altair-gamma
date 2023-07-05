@@ -161,6 +161,7 @@ const ProjectStyled = styled.div`
         display: grid;
         grid-template-columns: 1fr 1fr;
         gap: 10px;
+        width: 100%;
       }
     }
   }
@@ -386,7 +387,14 @@ const NavigationBtn = styled.div<TNavigationBtn>`
   width: fit-content;
   padding: 10px;
   gap: 5px;
-  width: 100%;
+  width: 200px;
+  justify-self: ${({ $type }) => $type === "prev" ? "end" : "start"};
+  border-radius: 5px;
+  @media (hover: hover) {
+    &:hover {
+      background-color: ${({ theme }) => hexToRgbA(theme.colors.primary.L3, 0.1)};
+    }
+  }
   ${({ $disabled, $type }) => !$disabled && css`
     &::before {
       content: '';
@@ -412,7 +420,7 @@ const NavigationBtn = styled.div<TNavigationBtn>`
       };
     }`
   }
-  transition: background-color,border-bottom 0.3s ease-in-out;
+  transition: background-color 0.3s ease-in-out;
   box-sizing: border-box;
   ${({ $type }) => $type === 'prev' && css`
     align-items: end;
