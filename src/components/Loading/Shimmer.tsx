@@ -28,23 +28,22 @@ const Main = styled.div`
     left,
     ${({ theme }) => hexToRgbA(theme.colors.text.L3, 0.01)} 0%,
     ${({ theme }) => hexToRgbA(theme.colors.text.L3, 0.1)} 20%,
-    ${({ theme }) => hexToRgbA(theme.colors.text.L3, 0.3)} 40%,
-    ${({ theme }) => hexToRgbA(theme.colors.text.L3, 0.3)} 60%,
-    ${({ theme }) => hexToRgbA(theme.colors.text.L3, 0.1)} 70%,
+    ${({ theme }) => hexToRgbA(theme.colors.text.L3, 0.2)} 40%,
+    ${({ theme }) => hexToRgbA(theme.colors.text.L3, 0.2)} 60%,
+    ${({ theme }) => hexToRgbA(theme.colors.text.L3, 0.1)} 80%,
     ${({ theme }) => hexToRgbA(theme.colors.text.L3, 0.01)} 100%
   );
   background-repeat: no-repeat;
-  background-size: 800px 100%;
 
   height: 100%;
   width: 100%;
 
   @keyframes placeholderSkeleton {
     0% {
-      background-position: 200% 0;
+      transform: translateX(-100%);
     }
     100% {
-      background-position: -200% 0;
+      transform: translateX(100%);
     }
   }
 `
