@@ -36,9 +36,9 @@ const Main = styled.div`
   position: relative;
   background-color: ${({ theme }) => hexToRgbA(theme.colors.text.L1, 0.2)};
   > div {
-    display: flex;
     > img {
-      object-fit: cover;
+      max-width:100%;
+      max-height:100%;
     }
   }
 `
