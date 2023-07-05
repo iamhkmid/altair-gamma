@@ -294,7 +294,7 @@ const ProjectWrapper = styled(motion.div)`
     }
     .image-list {
       display: grid;
-      grid-template-columns: repeat(5, minmax(50px, 1fr));
+      grid-template-columns: repeat(5, minmax(30px, 1fr));
       gap: 5px;
       width: 100%;
       .image-wrapper{
@@ -303,11 +303,13 @@ const ProjectWrapper = styled(motion.div)`
         position: relative;
         margin-bottom: 10px;
         box-sizing: border-box;
-        border-radius: 5px;
-        overflow: hidden;
-        aspect-ratio: 16/9;
-        border: 1px solid ${({ theme }) => theme.variant === "light" ? theme.colors.primary.L2 : "transparent"};
         transition: 0.3s all ease-in-out;
+        .AltairImage-root {
+          border-radius: 5px;
+          overflow: hidden;
+          aspect-ratio: 16/9;
+          border: 1px solid ${({ theme }) => theme.variant === "light" ? theme.colors.primary.L2 : "transparent"};
+        }
         &.active {
           opacity: 1;
         }
