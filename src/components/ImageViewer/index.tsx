@@ -89,6 +89,7 @@ const Main = styled(motion.div)`
   .AltairImageViewer-header {
     display: grid;
     width: 100%;
+    height: fit-content;
     grid-template-columns: 1fr 1fr;
     height: fit-content;
     position: absolute;
@@ -110,6 +111,8 @@ const Main = styled(motion.div)`
       border-radius: 100%;
       cursor: pointer;
       padding: 2px;
+      height: fit-content;
+      width: fit-content;
       &:hover {
         background-color: ${({ theme }) => hexToRgbA(theme.colors.rose.L8, 0.5)};
       }
