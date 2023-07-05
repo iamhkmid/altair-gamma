@@ -236,7 +236,7 @@ const OverviewCardStyled = styled.div`
   .text1 {
     color: ${({ theme }) => theme.colors.text.L4};
     font-size: 15px;
-    font-weight: 700;
+    font-weight: 800;
     margin: 0;
     text-align: center;
     @media screen and (min-width: ${({ theme }) => theme.breakpoint.sm}px) {

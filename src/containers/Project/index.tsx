@@ -349,7 +349,7 @@ const ProjectWrapper = styled(motion.div)`
       color: ${({ theme }) => theme.colors.text.L5};
       margin: 0;
       font-size: 20px;
-      font-weight: 600;
+      font-weight: 800;
       @media screen and (min-width: ${({ theme }) => theme.breakpoint.sm}px) {
         font-size: 25px;
       }
