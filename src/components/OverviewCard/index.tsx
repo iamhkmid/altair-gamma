@@ -6,7 +6,7 @@ import { overviewData } from '../../utils/constants/overview'
 import { motion } from 'framer-motion'
 import Button from '../Form/Button'
 import ProfileImage from '../../assets/images/home_img.webp'
-import Loader1 from '../Loader/Loader1'
+import CircleGradientLoader from '../Loading/CircleGradientLoader'
 
 const OverviewCard: React.FC = () => {
   const [loadImg, setLoadImg] = React.useState(true)
@@ -35,7 +35,7 @@ const OverviewCard: React.FC = () => {
   return (
     <OverviewCardStyled>
       <div className="section1">
-        {loadImg && <motion.div initial={{ opacity: 0 }} animate={{ opacity: loadImg ? 1 : 0 }} className="img-loader" transition={{ duration: 0.7 }}><Loader1 /></motion.div>}
+        {loadImg && <motion.div initial={{ opacity: 0 }} animate={{ opacity: loadImg ? 1 : 0 }} className="img-loader" transition={{ duration: 0.7 }}><CircleGradientLoader /></motion.div>}
         <motion.div className="img-wrapper" >
           {/* <motion.img initial={{ opacity: 0 }} animate={{ opacity: loadImg ? 0 : 1 }} transition={{ duration: 0.7 }} src={ProfileImages} alt="img" onLoad={onLoadImg} /> */}
           <motion.svg viewBox="0 0 182 185" initial={{ opacity: 0 }} animate={{ opacity: loadImg ? 0 : 1 }} transition={{ duration: 0.7 }}>

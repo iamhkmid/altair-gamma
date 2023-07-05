@@ -3,6 +3,7 @@ export const projects = [
     id: '1',
     title: 'Penerbit DapurKata',
     description: 'Penerbit DapurKata is a book selling website with a shopping cart and an automatic payment method features.',
+    development: false,
     images: [
       '/projects/dp1.png',
       '/projects/dp2.png',
@@ -15,6 +16,7 @@ export const projects = [
     id: '2',
     title: 'UBB Press',
     description: 'UBB Press is a website that provides information about books published by TP3I Universitas Bangka Belitung.',
+    development: false,
     images: [
       '/projects/ubb1.png',
       '/projects/ubb2.png',
@@ -23,28 +25,32 @@ export const projects = [
       '/projects/ubb5.png'
     ]
   },
-  // {
-  //   id: '3',
-  //   title: 'Bank Victoria',
-  //   description: 'Bank Victoria is an internet banking website with features including general information about savings/current accounts, time deposit accounts, account mutation information, fund transfers, both transfers between accounts and between banks, purchases, payments, etc.',
-  //   images: [
-  //     '/projects/bvic1.png',
-  //     '/projects/bvic2.png',
-  //     '/projects/bvic3.png',
-  //     '/projects/bvic4.png',
-  //     '/projects/bvic5.png'
-  //   ]
-  // },
-  // {
-  //   id: '4',
-  //   title: 'JConnect (Bank Jatim)',
-  //   description: 'Jconnect is an internet banking website with features including general information about savings/current accounts, time deposit accounts, account mutation information, fund transfers, both transfers between accounts and between banks, purchases, payments, etc.',
-  //   images: [
-  //     '/projects/jatim1.png',
-  //     '/projects/jatim2.png',
-  //     '/projects/jatim3.png',
-  //     '/projects/jatim4.png',
-  //     '/projects/jatim5.png'
-  //   ]
-  // }
+  {
+    id: '3',
+    title: 'Bank Victoria',
+    description: 'Bank Victoria is an internet banking website with features including general information about savings/current accounts, time deposit accounts, account mutation information, fund transfers, both transfers between accounts and between banks, purchases, payments, etc.',
+    development: true,
+    images: [
+      // '/projects/bvic1.png',
+      // '/projects/bvic2.png',
+      // '/projects/bvic3.png',
+      // '/projects/bvic4.png',
+      // '/projects/bvic5.png'
+      '/projects/bvic-blur.png'
+    ]
+  },
+  {
+    id: '4',
+    title: 'JConnect (Bank Jatim)',
+    description: 'Jconnect is an internet banking website with features including general information about savings/current accounts, time deposit accounts, account mutation information, fund transfers, both transfers between accounts and between banks, purchases, payments, etc.',
+    development: true,
+    images: [
+      // '/projects/jatim1.png',
+      // '/projects/jatim2.png',
+      // '/projects/jatim3.png',
+      // '/projects/jatim4.png',
+      // '/projects/jatim5.png'
+      '/projects/jatim-blur.png'
+    ]
+  }
 ]

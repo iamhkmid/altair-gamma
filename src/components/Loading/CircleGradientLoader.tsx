@@ -3,7 +3,7 @@ import { styled } from 'styled-components'
 const Loader1 = () => {
   return (
     <StyledLoader>
-      <svg className="loader" width="60px" height="60px" version="1.1" viewBox="0 0 100 100">
+      <svg className="loader" version="1.1" viewBox="0 0 100 100">
         <defs>
           <linearGradient id="linearGradient1902" x1="49.728" x2="114.28" y1="-14.904" y2="-16.879" gradientTransform="matrix(.82112 0 0 .82112 -105.84 -34.919)" gradientUnits="userSpaceOnUse">
             <stop stopColor="#fff" stopOpacity=".1986" offset="0" />
@@ -30,6 +30,8 @@ export default Loader1
 
 const StyledLoader = styled.div`
   .loader {
+    width: 60px;
+    height: 60px;
     border-radius: 100%;
     animation: rotation 1s linear infinite;
     @keyframes rotation {

@@ -5,7 +5,9 @@ import { AnimatePresence, type Variants, motion } from 'framer-motion'
 import { hexToRgbA } from '../../utils/hexToRgbA'
 import Image from '../../components/Image'
 import { ReactComponent as ZoomInIcon } from '../../assets/icons/add-circle-outline.svg'
+import { ReactComponent as CogIcon } from '../../assets/icons/cog.svg'
 import ImageViewer from '../../components/ImageViewer'
+import CircleGradientLoader from '../../components/Loading/CircleGradientLoader'
 
 const Project = () => {
   const [preview, setPreview] = React.useState({ key: '1', type: 'next' })
@@ -53,9 +55,10 @@ const Project = () => {
                       animate={{ opacity: 1 }}
                       exit={{ opacity: 0 }}
                       layoutId="image-viewer"
-                      onClick={() => { setShowImage(true) }}
+                      onClick={() => !project.development && setShowImage(true)}
                     >
-                      <div className="image-zoom"><div className="zoom-icon"><ZoomInIcon />Full-Screen</div></div>
+                      {!project.development && <div className="image-zoom"><div className="zoom-icon"><ZoomInIcon />Full-Screen</div></div>}
+                      {project.development && <div className="under-development"><div className="dev-icon"><CircleGradientLoader />Under Development</div></div>}
                       <Image src={img} alt="img" />
                     </motion.div>
                   ))}
@@ -209,6 +212,49 @@ const ProjectWrapper = styled(motion.div)`
         border-radius: 5px;
         transition: 0.3s all ease-in-out;
       }
+      .under-development {
+        display: flex;
+        pointer-events: none;
+        position: absolute;
+        height: 100%;
+        width: 100%;
+        left: 0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        top: 0;
+        z-index: 1;
+        background-color: ${({ theme }) => hexToRgbA(theme.colors.text.L1, 0.7)};
+        transition: 0.2s opacity ease-in-out;
+        .dev-icon {
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          gap: 8px;
+          color: ${({ theme }) => theme.colors.text.L5};
+          padding: 8px 13px;
+          text-transform: uppercase;
+          font-size: 14px;
+          font-weight: 700;
+          border-radius: 10px;
+          background: ${({ theme }) => hexToRgbA(theme.colors.text.L1, 0.7)};
+          @media screen and (min-width: ${({ theme }) => theme.breakpoint.xxxl}px) {
+            padding: 10px 15px;
+            font-size: 15px;
+          }
+          border: 1px solid ${({ theme }) => hexToRgbA(theme.colors.text.L5, 0.2)};
+          svg.loader {
+            width: 35px;
+            height: 35px;
+            > defs > linearGradient stop {
+              stop-color: ${({ theme }) => theme.colors.text.L5};
+            }
+          }
+          -webkit-user-select: none; /* Safari */
+          -ms-user-select: none; /* IE 10 and IE 11 */
+          user-select: none; /* Standard syntax */
+        }
+      }
       .image-zoom {
         opacity: 0;
         cursor: pointer;
@@ -222,14 +268,14 @@ const ProjectWrapper = styled(motion.div)`
         top: 0;
         z-index: 1;
         background-color: ${({ theme }) => hexToRgbA(theme.colors.slate.L11, 0.7)};
-        transition: 0.2s background-color ease-in-out;
+        transition: 0.2s opacity ease-in-out;
         .zoom-icon {
           display: flex;
           align-items: center;
           justify-content: center;
           gap: 5px;
           color: ${({ theme }) => theme.colors.slate.L2};
-          padding: 5px 10px;
+          padding: 8px 13px;
           font-size: 12px;
           font-weight: 500;
           border-radius: 10px;
@@ -242,6 +288,10 @@ const ProjectWrapper = styled(motion.div)`
           -webkit-user-select: none; /* Safari */
           -ms-user-select: none; /* IE 10 and IE 11 */
           user-select: none; /* Standard syntax */
+          @media screen and (min-width: ${({ theme }) => theme.breakpoint.xxxl}px) {
+            padding: 10px 15px;
+            font-size: 14px;
+          }
         }
       }
     }
