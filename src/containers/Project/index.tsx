@@ -384,10 +384,35 @@ const NavigationBtn = styled.div<TNavigationBtn>`
   position: relative;
   cursor: pointer;
   width: fit-content;
-  border-radius: 5px;
   padding: 10px;
   gap: 5px;
   width: 100%;
+  ${({ $disabled, $type }) => !$disabled && css`
+    &::before {
+      content: '';
+      ${$type === "next" ? css`left: 20px;` : css`right:20px;`};
+      top: 20px;
+      width: 100%;
+      height: 100%;
+      margin: auto 0;
+      position: absolute;
+      content: "";
+      filter: blur(15px);
+      background: radial-gradient(${({ theme }) => hexToRgbA(theme.colors.primary.L3, 0.8)}, rgba(1, 65, 255, 0));
+      width: 50px;
+      height: 35px;
+      opacity: 0;
+      animation: animateNav 10s infinite ${$type === "next" ? "1s" : "0s"};
+      @keyframes animateNav {
+        0%   {  opacity: 0; }
+        40%   {  opacity: 0; }
+        60%   {  opacity: 1; }
+        0%   { opacity: 0; }
+        100% {  opacity: 0; }
+      };
+    }`
+  }
+  transition: background-color,border-bottom 0.3s ease-in-out;
   box-sizing: border-box;
   ${({ $type }) => $type === 'prev' && css`
     align-items: end;
