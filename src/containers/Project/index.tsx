@@ -384,24 +384,45 @@ const NavigationBtn = styled.div<TNavigationBtn>`
   align-items: start;
   position: relative;
   cursor: pointer;
-  width: fit-content;
   padding: 10px;
   gap: 5px;
   width: 100%;
+  justify-self: ${({ $type }) => $type === "prev" ? "end" : "start"};
+  border-radius: 5px;
+  ::after {
+    position: absolute;
+    content: "";
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    border-radius: 5px;
+    overflow: hidden;
+    background: ${({ theme }) => hexToRgbA(theme.colors.blue.L8, 0.5)};
+    background: linear-gradient(50deg, ${({ theme }) => hexToRgbA(theme.colors.blue.L8, 0.2)} 20%, transparent 75%);
+    transition: opacity 0.3s linear;
+    z-index: -1;
+    opacity: 0;
+    ${({ $type }) => $type === "prev" && css`
+    -webkit-transform: scaleX(-1);
+    transform: scaleX(-1);
+    `}
+  }  
+  @media (hover: hover) {
+   &:hover {
+    ::after {
+      opacity: 1;
+    }
+   }
+  }
   @media screen and (min-width: ${({ theme }) => theme.breakpoint.sm}px) {
     width: 200px;
   }
-  justify-self: ${({ $type }) => $type === "prev" ? "end" : "start"};
-  border-radius: 5px;
-  @media (hover: hover) {
-    &:hover {
-      background-color: ${({ theme }) => hexToRgbA(theme.colors.primary.L3, 0.15)};
-    }
-  }
+  transition: 0.3s opacity ease-in-out;
   ${({ $disabled, $type }) => !$disabled && css`
-    &::before {
-      content: '';
-      ${$type === "next" ? css`left: 20px;` : css`right:20px;`};
+  &::before {
+    content: '';
+    ${$type === "next" ? css`left: 20px;` : css`right:20px;`};
       top: 20px;
       width: 100%;
       height: 100%;
@@ -427,15 +448,14 @@ const NavigationBtn = styled.div<TNavigationBtn>`
       };
     }`
   }
-  transition: background-color 0.3s ease-in-out;
   box-sizing: border-box;
   ${({ $type }) => $type === 'prev' && css`
-    align-items: end;
+  align-items: end;
   `}
   -webkit-user-select: none; /* Safari */
   -ms-user-select: none; /* IE 10 and IE 11 */
   user-select: none; /* Standard syntax */
-
+  
   > p:nth-child(1){
     color: ${({ theme }) => theme.colors.text.L4};
     margin: 0;
@@ -469,4 +489,4 @@ const NavigationBtn = styled.div<TNavigationBtn>`
       color: ${({ theme }) => theme.colors.text.L2};
     }
   `}
-`
+  `

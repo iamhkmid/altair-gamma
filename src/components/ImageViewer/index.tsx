@@ -148,6 +148,7 @@ const Main = styled(motion.div)`
       box-sizing: border-box;
       height: fit-content;
       width: fit-content;
+      border-radius: 5px;
       @media (hover: hover) {
         background-color: ${({ theme }) => hexToRgbA(theme.colors.rose.L8, 0.2)};
       }
@@ -176,7 +177,7 @@ const Main = styled(motion.div)`
     width: 100%;
     height: 100%;
     .AltairImageViewer-prev {
-      left: 0;
+      left: 0; 
     }
     .AltairImageViewer-next {
       right: 0;
@@ -185,6 +186,7 @@ const Main = styled(motion.div)`
       display: none;
       position: absolute;
       align-items: center;
+      border-radius: 5px;
       height: 25px;
       width: 25px;
       justify-content: center;
@@ -278,6 +280,7 @@ const Main = styled(motion.div)`
         outline: none;
         cursor: pointer;
         border: none;
+        border-radius: 5px;
         background-color: ${({ theme }) => hexToRgbA(theme.colors.blue.L11, 0.3)};
         &:hover {
           background-color: ${({ theme }) => hexToRgbA(theme.colors.blue.L5, 0.6)};
