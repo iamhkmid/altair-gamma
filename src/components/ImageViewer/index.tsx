@@ -86,7 +86,9 @@ const ImageViewer: React.FC<ImageViewerProps> = (props) => {
         <div className="AltairImageViewer-zoom">
           <button className="AltairImageViewer-zoomMinus" disabled={scale - 0.25 < 0.25} onClick={() => onClickScale("minus")}><MinusIcon /></button>
           <button className="AltairImageViewer-zoomPlus" disabled={scale + 0.25 > 3} onClick={() => onClickScale("plus")}><PlusIcon /></button>
-          <div className="AltairImageViewer-reset" onClick={onClickReset}><ResetIcon /></div>
+          <button className="AltairImageViewer-reset" onClick={onClickReset}><ResetIcon /></button>
+          <button className="AltairImageViewer-prev" onClick={() => { changeNavigation('prev') }}><PrevIcon /></button>
+          <button className="AltairImageViewer-next" onClick={() => { changeNavigation('next') }}><NextIcon /></button>
         </div>
         <div className="AltairImageViewer-NavPages">
           {props.src.map((val, idx) => (
@@ -180,7 +182,7 @@ const Main = styled(motion.div)`
       right: 0;
     }
     .AltairImageViewer-prev, .AltairImageViewer-next {
-      display: flex;
+      display: none;
       position: absolute;
       align-items: center;
       height: 25px;
@@ -191,11 +193,12 @@ const Main = styled(motion.div)`
       padding: 30px 5px;
       cursor: pointer;
       z-index: 12;
-      background-color: ${({ theme }) => hexToRgbA(theme.colors.primary.L2, 0.1)};
+      background-color: ${({ theme }) => hexToRgbA(theme.colors.slate.L11, 0.1)};
       &:hover {
-        background-color: ${({ theme }) => hexToRgbA(theme.colors.primary.L2, 0.5)};
+        background-color: ${({ theme }) => hexToRgbA(theme.colors.blue.L5, 0.6)};
       }
       @media screen and (min-width: ${({ theme }) => theme.breakpoint.md}px) {
+        display: flex;
         height: 40px;
         width: 40px;
         padding: 35px 7px;
@@ -269,20 +272,26 @@ const Main = styled(motion.div)`
       position: absolute;
       left: 0;
       bottom: 50px;
-      .AltairImageViewer-zoomMinus, .AltairImageViewer-zoomPlus, .AltairImageViewer-reset {
+      .AltairImageViewer-zoomMinus, .AltairImageViewer-zoomPlus, .AltairImageViewer-reset, .AltairImageViewer-prev, .AltairImageViewer-next {
         display: flex;
-        padding: 10px;
         outline: none;
+        cursor: pointer;
         border: none;
-        background-color: ${({ theme }) => hexToRgbA(theme.colors.primary.L2, 0.1)};
+        background-color: ${({ theme }) => hexToRgbA(theme.colors.slate.L11, 0.3)};
         &:hover {
-          background-color: ${({ theme }) => hexToRgbA(theme.colors.primary.L2, 0.5)};
+          background-color: ${({ theme }) => hexToRgbA(theme.colors.blue.L5, 0.6)};
         }
         > svg {
-          color: ${({ theme }) => theme.colors.text.L5};
-          width: 25px;
+          color: ${({ theme }) => hexToRgbA(theme.colors.slate.L1, 0.8)};
+          path {
+            stroke-width: 50px;
+          }
+          padding: 10px;
+          width: 15px;
+          height: 15px;
           @media screen and (min-width: ${({ theme }) => theme.breakpoint.md}px) {
-            width: 30px;
+            width: 20px;
+            height: 20px;
           }
           transition: 0.3s all ease;
         }
