@@ -150,7 +150,7 @@ const Main = styled(motion.div)`
         background-color: ${({ theme }) => hexToRgbA(theme.colors.rose.L8, 0.2)};
       }
       @media (hover: none) {
-        background-color: ${({ theme }) => hexToRgbA(theme.colors.rose.L8, 0.7)};
+        background-color: ${({ theme }) => hexToRgbA(theme.colors.rose.L8, 0.5)};
       }
       &:hover {
         background-color: ${({ theme }) => hexToRgbA(theme.colors.rose.L8, 0.7)};
