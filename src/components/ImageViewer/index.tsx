@@ -83,7 +83,7 @@ const ImageViewer: React.FC<ImageViewerProps> = (props) => {
         <div className="AltairImageViewer-next" onClick={() => { changeNavigation('next') }}><NextIcon /></div>
       </div>
       <div className="AltairImageViewer-footer">
-        <div className="AltairImageViewer-zoom">
+        <div className="AltairImageViewer-action">
           <button className="AltairImageViewer-zoomMinus" disabled={scale - 0.25 < 0.25} onClick={() => onClickScale("minus")}><MinusIcon /></button>
           <button className="AltairImageViewer-zoomPlus" disabled={scale + 0.25 > 3} onClick={() => onClickScale("plus")}><PlusIcon /></button>
           <button className="AltairImageViewer-reset" onClick={onClickReset}><ResetIcon /></button>
@@ -193,7 +193,7 @@ const Main = styled(motion.div)`
       padding: 30px 5px;
       cursor: pointer;
       z-index: 12;
-      background-color: ${({ theme }) => hexToRgbA(theme.colors.slate.L11, 0.1)};
+      background-color: ${({ theme }) => hexToRgbA(theme.colors.blue.L11, 0.3)};
       &:hover {
         background-color: ${({ theme }) => hexToRgbA(theme.colors.blue.L5, 0.6)};
       }
@@ -266,18 +266,19 @@ const Main = styled(motion.div)`
         }
       }
     }
-    .AltairImageViewer-zoom {
+    .AltairImageViewer-action {
       display: flex;
       align-items: center;
       position: absolute;
       left: 0;
       bottom: 50px;
+      gap: 5px;
       .AltairImageViewer-zoomMinus, .AltairImageViewer-zoomPlus, .AltairImageViewer-reset, .AltairImageViewer-prev, .AltairImageViewer-next {
         display: flex;
         outline: none;
         cursor: pointer;
         border: none;
-        background-color: ${({ theme }) => hexToRgbA(theme.colors.slate.L11, 0.3)};
+        background-color: ${({ theme }) => hexToRgbA(theme.colors.blue.L11, 0.3)};
         &:hover {
           background-color: ${({ theme }) => hexToRgbA(theme.colors.blue.L5, 0.6)};
         }
