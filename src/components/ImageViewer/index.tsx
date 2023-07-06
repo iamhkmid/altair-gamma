@@ -45,13 +45,6 @@ const ImageViewer: React.FC<ImageViewerProps> = (props) => {
     setScale(1)
   }
 
-  console.log({
-    top: scale === 1 ? 0 : ((-0.5 * (imgRef.current?.clientHeight || 0))* scale) + 100,
-    left: scale === 1 ? 0 : (-0.5 * (imgRef.current?.clientWidth || 0)) * scale,
-    right: scale === 1 ? 0 : (0.5 * (imgRef.current?.clientWidth || 0)) * scale,
-    bottom: scale === 1 ? 0 : ((0.5 * (imgRef.current?.clientHeight || 0)) * scale) - 100,
-  })
-
   return (
     <Main className="AltairImageViewer-root" layoutId="image-viewer" ref={containerRef}>
       <div className="AltairImageViewer-header">
