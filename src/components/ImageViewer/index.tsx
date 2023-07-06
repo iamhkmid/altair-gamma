@@ -73,6 +73,7 @@ const ImageViewer: React.FC<ImageViewerProps> = (props) => {
                 animate="show"
                 exit={navigation.type}
                 onClick={() => setResetDrag(false)}
+                onTap={() => setResetDrag(false)}
               >
                 <Image src={img} alt="img" />
               </motion.div>
