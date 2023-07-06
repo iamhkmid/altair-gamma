@@ -30,6 +30,7 @@ const ImageViewer: React.FC<ImageViewerProps> = (props) => {
   }
 
   const changeNavigation = (type: 'prev' | 'next'): void => {
+    setScale(1)
     const counter = type === 'next' ? 1 : -1
     const newIdx = navigation.idx + counter < 0 ? props.src.length - 1 : (navigation.idx + counter) % props.src.length === 0 ? 0 : navigation.idx + counter
     setNavigation({ idx: newIdx, type })
@@ -41,7 +42,6 @@ const ImageViewer: React.FC<ImageViewerProps> = (props) => {
 
   const onClickReset = () => {
     setResetDrag(true)
-
     setScale(1)
   }
 
