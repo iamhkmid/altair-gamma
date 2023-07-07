@@ -179,7 +179,7 @@ export const MenuStyled = styled(motion.div)`
             overflow: hidden;
             filter: blur(15px);
             background: ${({ theme }) => hexToRgbA(theme.colors.blue.L8, 0.4)};
-            background: linear-gradient(10deg, ${({ theme }) => hexToRgbA(theme.colors.blue.L8, 0.5)} 20%, transparent 65%);
+            background: linear-gradient(10deg, ${({ theme }) => hexToRgbA(theme.colors.blue.L8, 0.6)} 20%, transparent 65%);
             transition: opacity 0.3s linear;
             z-index: -1;
             opacity: 0;
@@ -187,13 +187,15 @@ export const MenuStyled = styled(motion.div)`
           &::before {
             position: absolute;
             content: "";
-            top: 0;
-            right: 0;
-            bottom: 0;
-            left: 0;
+            top: 10px;
+            right: 30px;
+            width: 30px;
+            height: 30px;
+            border-radius: 100%;
             border-radius: 5px;
             overflow: hidden;
-            filter: blur(10px);
+            filter: blur(15px);
+            background: ${({ theme }) => hexToRgbA(theme.colors.rose.L8, theme.variant === "light"? 0.3 : 0.7)};
             transition: opacity 0.3s linear;
             z-index: -1;
             opacity: 0;

@@ -45,14 +45,10 @@ const Menu = () => {
   return (
     <MenuStyled initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ delay: 0.5, duration: 0.7 }}>
       <div className="left">
-        <AnimatePresence>
-          {withTitle && (
-            <motion.div className="title" initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }}>
-              <p>{'<MuhammadLuqmanulHakim />'}</p>
-              <p>Frontend Developer</p>
-            </motion.div>
-          )}
-        </AnimatePresence>
+        <motion.div className="title" animate={{ opacity: withTitle ? 1 : 0 }}>
+          <p>{'<MuhammadLuqmanulHakim />'}</p>
+          <p>Frontend Developer</p>
+        </motion.div>
       </div>
       <div className="mobile-menu">
         <motion.div ref={refButton} className="mobile-menu-toggle" onClick={() => { setActiveMenu((prev) => !prev) }}>
