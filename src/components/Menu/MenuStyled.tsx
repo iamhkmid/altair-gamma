@@ -147,6 +147,7 @@ export const MenuStyled = styled(motion.div)`
           text-decoration: none;
         }
         .menu-button {
+          position: relative;
           font-size: 11px;
           font-weight: 600;
           background-color: transparent;
@@ -155,9 +156,10 @@ export const MenuStyled = styled(motion.div)`
           outline: none;
           border: none;
           color: ${({ theme }) => theme.colors.text.L5};
-          border-bottom: 2px solid transparent;
           &:hover {
-            border-bottom: 2px solid ${({ theme }) => hexToRgbA(theme.colors.primary.L3, 0.5)};
+            ::after {
+              opacity: 1;
+            }
           }
           @media screen and (min-width: ${({ theme }) => theme.breakpoint.sm}px) {
             font-size: 13px;
@@ -166,11 +168,53 @@ export const MenuStyled = styled(motion.div)`
             font-size: 16px;
           }
           transition: 0.3s all ease-in-out;
+          &::after {
+            position: absolute;
+            content: "";
+            top: 0;
+            right: 0;
+            bottom: 0;
+            left: 0;
+            border-radius: 5px;
+            overflow: hidden;
+            filter: blur(15px);
+            background: ${({ theme }) => hexToRgbA(theme.colors.blue.L8, 0.4)};
+            background: linear-gradient(10deg, ${({ theme }) => hexToRgbA(theme.colors.blue.L8, 0.5)} 20%, transparent 65%);
+            transition: opacity 0.3s linear;
+            z-index: -1;
+            opacity: 0;
+          }  
+          &::before {
+            position: absolute;
+            content: "";
+            top: 0;
+            right: 0;
+            bottom: 0;
+            left: 0;
+            border-radius: 5px;
+            overflow: hidden;
+            filter: blur(10px);
+            transition: opacity 0.3s linear;
+            z-index: -1;
+            opacity: 0;
+          }  
         }
       }
+      :hover {
+        .menu-button {
+          &::after {
+            opacity: 1;
+          }
+        }
+      } 
       .active {
         .menu-button {
-          border-bottom: 2px solid ${({ theme }) => hexToRgbA(theme.colors.primary.L3, 0.5)};
+          &::after {
+            opacity: 1;
+          }
+          &::before {
+            opacity: 1;
+          }
         }
       }
     }

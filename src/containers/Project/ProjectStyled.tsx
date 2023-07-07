@@ -304,6 +304,7 @@ export const NavigationBtn = styled.div<TNavigationBtn>`
     left: 0;
     border-radius: 5px;
     overflow: hidden;
+    filter: blur(15px);
     background: ${({ theme }) => hexToRgbA(theme.colors.blue.L8, 0.5)};
     background: linear-gradient(50deg, ${({ theme }) => hexToRgbA(theme.colors.blue.L8, 0.2)} 20%, transparent 75%);
     transition: opacity 0.3s linear;
@@ -336,15 +337,15 @@ export const NavigationBtn = styled.div<TNavigationBtn>`
       position: absolute;
       content: "";
       filter: blur(15px);
-      background: radial-gradient(${({ theme }) => hexToRgbA(theme.colors.primary.L3, 0.8)}, rgba(1, 65, 255, 0));
+      background: radial-gradient(${({ theme }) => hexToRgbA(theme.colors.rose.L7, 0.8)}, rgba(1, 65, 255, 0));
       opacity: 0;
-      width: 35px;
-      height: 30px;
+      width: 50px;
+      height: 15px;
       @media screen and (min-width: ${({ theme }) => theme.breakpoint.sm}px) {
-        width: 50px;
-        height: 35px;
+        width: 80px;
+        height: 20px;
       }
-      animation: animateNav 10s infinite ${$type === "next" ? "0s" : "3s"};
+      animation: animateNav 10s infinite ${$type === "next" ? "0s" : "5s"};
       @keyframes animateNav {
         0%   {  opacity: 0; }
         40%   {  opacity: 0; }
