@@ -31,15 +31,15 @@ export const projects = [
     id: '3',
     title: 'Bank Victoria',
     description: 'Bank Victoria is an internet banking website with features including general information about savings/current accounts, time deposit accounts, account mutation information, fund transfers, both transfers between accounts and between banks, purchases, payments, etc.',
-    development: true,
+    development: false,
     projectType: "Internet Banking",
     images: [
-      // '/projects/bvic1.png',
-      // '/projects/bvic2.png',
-      // '/projects/bvic3.png',
-      // '/projects/bvic4.png',
-      // '/projects/bvic5.png'
-      '/projects/bvic-blur.png'
+      '/projects/bvic1.png',
+      '/projects/bvic2.png',
+      '/projects/bvic3.png',
+      '/projects/bvic4.png',
+      '/projects/bvic5.png'
+      // '/projects/bvic-blur.png'
     ]
   },
   {
