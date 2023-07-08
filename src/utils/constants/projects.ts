@@ -6,7 +6,7 @@ export const projects = [
     development: false,
     projectType: "E-Commerce",
     role: "Fullstack",
-    techs: ["Typescript", "React", "Express JS", "Graphql"],
+    techs: ["Typescript", "Next JS", "Express JS", "Graphql", "Styled Components"],
     images: [
       '/projects/dp1.png',
       '/projects/dp2.png',
@@ -22,7 +22,7 @@ export const projects = [
     development: false,
     projectType: "Book Catalog",
     role: "Fullstack",
-    techs: ["Typescript", "React", "Express JS", "Graphql"],
+    techs: ["Typescript", "Next JS", "Express JS", "Graphql", "Material UI", "Styled Components"],
     images: [
       '/projects/ubb1.png',
       '/projects/ubb2.png',
@@ -38,7 +38,7 @@ export const projects = [
     development: false,
     projectType: "Internet Banking",
     role: "Frontend",
-    techs: ["Javascript", "React"],
+    techs: ["Javascript", "React JS", "Material UI", "Styled Components"],
     images: [
       '/projects/bvic1.png',
       '/projects/bvic2.png',
@@ -55,7 +55,7 @@ export const projects = [
     development: true,
     projectType: "Internet Banking",
     role: "Frontend",
-    techs: ["Typescript", "React"],
+    techs: ["Typescript", "React JS", "Styled Components"],
     images: [
       // '/projects/jatim1.png',
       // '/projects/jatim2.png',
