@@ -3,7 +3,7 @@ import { ButtonStyled, Particle } from './Button.styled'
 import { type ButtonProps, type TParticle } from './Button.types'
 
 const Button = React.forwardRef<Partial<HTMLButtonElement>, ButtonProps>((props, ref) => {
-  const { fullWidth, variant, particles: numOfParticles, endIcon, label, className, ...rest } = props
+  const { fullWidth, variant, particles: numOfParticles, endIcon, label, playAnimationOnMobile, className, ...rest } = props
   const internalRef = React.useRef<HTMLButtonElement | null>(null)
   const currRef = React.useMemo(() => (ref != null) || internalRef, [ref, internalRef]) as React.MutableRefObject<HTMLButtonElement>
 
@@ -25,17 +25,17 @@ const Button = React.forwardRef<Partial<HTMLButtonElement>, ButtonProps>((props,
   }), [numOfParticles, variant])
 
   return (
-      <ButtonStyled
-        {...rest}
-        $fullWidth={!!fullWidth}
-        $isIcon={variant === 'icon'}
-        $withIcon={!!endIcon}
-        ref={currRef}
-        $playAnimationOnMobile={props.playAnimationOnMobile!}
-        className={`AltairButton-root ${variant} ${className}`}
-      >
-        {props.children} 
-        {endIcon && <div className="AltairButton-endIcon">{endIcon}</div>}
+    <ButtonStyled
+      {...rest}
+      $fullWidth={!!fullWidth}
+      $isIcon={variant === 'icon'}
+      $withIcon={!!endIcon}
+      ref={currRef}
+      $playAnimationOnMobile={playAnimationOnMobile!}
+      className={`AltairButton-root ${variant} ${className}`}
+    >
+      {props.children}
+      {endIcon && <div className="AltairButton-endIcon">{endIcon}</div>}
       <div className="AltairButton-particles">
         {particles.map((par) => (
           <Particle
@@ -52,7 +52,7 @@ const Button = React.forwardRef<Partial<HTMLButtonElement>, ButtonProps>((props,
           />
         ))}
       </div>
-      </ButtonStyled>
+    </ButtonStyled>
   )
 })
 

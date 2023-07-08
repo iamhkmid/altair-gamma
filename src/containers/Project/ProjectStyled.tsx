@@ -7,23 +7,44 @@ export const ProjectStyled = styled.div`
   width: 100%;
   height: 100%;
   justify-content: center;
-  align-items: center;
+  box-sizing: border-box;
+  margin-top: 60px;
+  max-height: calc(100vh - 60px);
+  overflow-y: auto;
+  padding-bottom: 50px;
+  padding-top: 5vh;
+  @media screen and (min-width: ${({ theme }) => theme.breakpoint.md}px) {
+    padding-top: 10vh;
+    margin-top: 70px;
+    max-height: calc(100vh - 70px);
+  }
+
+  &::-webkit-scrollbar {
+    width: 5px;
+  }
+  &::-webkit-scrollbar-track {
+    background: transparent;
+  }
+  &::-webkit-scrollbar-thumb {
+    border-radius: 5px;
+    background:  ${({ theme }) => hexToRgbA(theme.colors.primary.L4, 0.3)};
+  }
+  &::-webkit-scrollbar-thumb:hover {
+    background:  ${({ theme }) => hexToRgbA(theme.colors.primary.L4, 0.7)};
+  }
   .content {
-    display: grid;
-    grid-template-rows: 1fr auto;
+    display: flex;
+    flex-direction: column;
     width: 100%;
-    height: 100%;
-    padding: 70px 20px 60px 20px;
+    height: fit-content;
+    padding: 0 20px;
     gap: 40px;
     box-sizing: border-box;
     @media screen and (min-width: ${({ theme }) => theme.breakpoint.md}px) {
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      padding: 100px 12vw;
+      padding: 0 12vw;
     }
     @media screen and (min-width: ${({ theme }) => theme.breakpoint.lg}px) {
-      padding: 100px 13vw;
+      padding: 0 13vw;
     }
     .preview {
       display: flex;
@@ -296,8 +317,26 @@ export const ProjectWrapper = styled(motion.div)`
       margin-top: 15px;
       font-size: 11px;
       font-weight: 300;
+      max-height: 70px;
+      height: 70px;
+      overflow-y: auto;
+      &::-webkit-scrollbar {
+        width: 5px;
+      }
+      &::-webkit-scrollbar-track {
+        background: transparent;
+      }
+      &::-webkit-scrollbar-thumb {
+        border-radius: 5px;
+        background:  ${({ theme }) => hexToRgbA(theme.colors.primary.L4, 0.6)};
+      }
+      &::-webkit-scrollbar-thumb:hover {
+        background:  ${({ theme }) => hexToRgbA(theme.colors.primary.L4, 0.8)};
+      }
       @media screen and (min-width: ${({ theme }) => theme.breakpoint.md}px) {
         font-size: 12px;
+        height: unset;
+        max-height: unset;
       }
       @media screen and (min-width: ${({ theme }) => theme.breakpoint.xxxl}px) {
         font-size: 16px;
@@ -308,10 +347,11 @@ export const ProjectWrapper = styled(motion.div)`
       display: flex;
       flex-direction: column;
       gap: 10px;
-      margin-top: 15px;
+      margin-top: 30px;
+      height: 100px;
       width: fit-content;
-      @media screen and (min-width: ${({ theme }) => theme.breakpoint.md}px) {
-        margin-top: 30px;
+      @media screen and (min-width: ${({ theme }) => theme.breakpoint.sm}px) {
+        height: unset;
       }
       > p:nth-child(1) {
         margin: 0;
@@ -335,7 +375,7 @@ export const ProjectWrapper = styled(motion.div)`
           color: ${({ theme }) => theme.colors.primary.L4};
         }
       }
-      @media screen and (min-width: ${({ theme }) => theme.breakpoint.sm}px) {
+      @media screen and (min-width: ${({ theme }) => theme.breakpoint.md}px) {
         > p:nth-child(1) {
           font-size: 13px;
         }

@@ -75,7 +75,7 @@ const Project = () => {
                 <div className="preview-detail">
                   <p className="title">{project?.title}</p>
                   <div className="project-type"><GlobeIcon />{project?.projectType} <span>|</span> <span>{project?.role}</span></div>
-                  <p className="description">{project?.description}</p>
+                  <div className="description">{project?.description}</div>
                   <div className="techs">
                     <p>Techs</p>
                     <div>

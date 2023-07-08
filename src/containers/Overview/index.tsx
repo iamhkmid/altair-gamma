@@ -14,6 +14,7 @@ export default Overview
 const OverviewStyled = styled.div`
   display: flex;
   width: 100%;
+  height: 100%;
   flex-direction: column;
   box-sizing: border-box;
   align-items: center;

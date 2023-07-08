@@ -5,6 +5,7 @@ import Menu from '../../components/Menu'
 import { menu } from '../../utils/constants/menu'
 import GlowBg from '../../components/GlowBg'
 import { AnimatePresence, motion } from 'framer-motion'
+import { hexToRgbA } from '../../utils/hexToRgbA'
 
 export const RootLoader = (args: LoaderFunctionArgs) => {
   const url = new URL(args.request.url)
@@ -23,7 +24,7 @@ const Root = () => {
 
   return (
     <RootStyled>
-      <Menu />
+      <Menu/>
       <AnimatePresence mode="popLayout">
         <motion.div className="animate-wrapper" key={location.pathname}>
           <AnimatedOutlet />
@@ -37,16 +38,13 @@ const Root = () => {
 export default Root
 
 const RootStyled = styled.div`
-  display: grid;
-  grid-template-rows: 1fr auto;
-  height: min(100vh, 100vh);
+  height: 100vh;
   width: 100vw;
-  max-width: 100vw;
   position: relative;
   overflow: hidden;
   box-sizing: border-box;
   .animate-wrapper{
     display: flex;
-    box-sizing: border-box;
+    height: 100%;
   }
 `
