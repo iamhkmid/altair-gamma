@@ -326,7 +326,7 @@ export const ProjectWrapper = styled(motion.div)`
           border-radius: 5px;
           backdrop-filter: blur(5px);
           background-color: ${({ theme }) => hexToRgbA(theme.colors.blue.L7, 0.3)};
-          font-size: 13px;
+          font-size: 12px;
           font-weight: 500;
           margin: 0;
           color: ${({ theme }) => theme.colors.primary.L4};
@@ -334,7 +334,7 @@ export const ProjectWrapper = styled(motion.div)`
       }
       @media screen and (min-width: ${({ theme }) => theme.breakpoint.sm}px) {
         > p:nth-child(1) {
-          font-size: 14px;
+          font-size: 13px;
         }
         > div:nth-child(2) {
           > p {
