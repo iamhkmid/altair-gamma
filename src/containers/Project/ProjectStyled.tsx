@@ -14,7 +14,7 @@ export const ProjectStyled = styled.div`
     justify-content: center;
     width: 100%;
     height: 100%;
-    padding: 100px 20px;
+    padding: 70px 20px;
     box-sizing: border-box;
     @media screen and (min-width: ${({ theme }) => theme.breakpoint.md}px) {
       padding: 100px 12vw;
