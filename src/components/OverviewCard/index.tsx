@@ -225,8 +225,8 @@ const OverviewCardStyled = styled.div`
             height: 14px;
             fill: currentColor;
             @media screen and (min-width: ${({ theme }) => theme.breakpoint.md}px) {
-              width: 18px;
-              height: 18px;
+              width: 20px;
+              height: 20px;
             }
           }
         }

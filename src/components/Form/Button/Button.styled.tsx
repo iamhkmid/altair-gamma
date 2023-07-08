@@ -89,7 +89,7 @@ export const ButtonStyled = styled.button<TButton>`
   width: ${({ $fullWidth }) => ($fullWidth ? '100%' : 'auto')};
 
   ${({ $isIcon }) => $isIcon && css`
-    padding: 0 10px;
+    padding: 0;
     aspect-ratio: 1/1;
     border-radius: 100%;
   `};
@@ -115,7 +115,7 @@ export const ButtonStyled = styled.button<TButton>`
     height: 42px;
     font-size: 13px;
     ${({ $isIcon }) => $isIcon && css`
-      padding: 12px;
+      padding: 0;
     `};
   }
   @media screen and (min-width: ${({ theme }) => theme.breakpoint?.xxxl}px){
