@@ -87,11 +87,27 @@ export const MenuStyled = styled(motion.div)`
       margin: 0;
       padding: 10px;
       width: 170px;
+      overflow: hidden;
       list-style-type: none;
       gap: 5px;
-      box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
-      background-color: ${({ theme }) => hexToRgbA(theme.colors.text.L1, 0.9)};
+      /* box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px; */
+      backdrop-filter: blur(5px);
+      background-color: ${({ theme }) => hexToRgbA(theme.colors.text.L1, 0.3)};
+      border: 1px solid ${({ theme }) => hexToRgbA(theme.colors.text.L3, 0.2)};
       border-radius: 5px;
+      ::after {
+        position: absolute;
+        content: "";
+        top: 0;
+        right: 0;
+        left: 0;
+        bottom: 0;
+        border-radius: 5px;
+        overflow: hidden;
+        /* background-color: ${({ theme }) => hexToRgbA(theme.colors.rose.L11, 0.2)}; */
+        z-index: -1;
+        opacity: 1;
+      }  
       li {
         margin: 0;
         padding: 0;

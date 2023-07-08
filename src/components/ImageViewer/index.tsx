@@ -114,7 +114,8 @@ const Main = styled(motion.div)`
   top: 0;
   width: 100vw;
   height: 100vh;
-  background-color: ${({ theme }) => hexToRgbA(theme.colors.slate.L11, 0.9)};
+  backdrop-filter: blur(5px);
+  background-color: ${({ theme }) => hexToRgbA(theme.colors.slate.L11, 0.5)};
   z-index: 1000;
   
   -webkit-user-select: none; /* Safari */
