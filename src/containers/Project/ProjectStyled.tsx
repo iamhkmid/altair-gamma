@@ -257,6 +257,9 @@ export const ProjectWrapper = styled(motion.div)`
       font-weight: 600;
       border-radius: 5px;
       text-transform: uppercase;
+      > span {
+        color: ${({ theme }) => theme.colors.rose.L6};
+      }
       svg {
         width: 18px;
         height: 18px;

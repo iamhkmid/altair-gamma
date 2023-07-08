@@ -73,12 +73,12 @@ const Project = () => {
               </div>
               <div className="preview-detail">
                 <p className="title">{project?.title}</p>
-                <div className="project-type"><GlobeIcon />{project?.projectType}</div>
+                <div className="project-type"><GlobeIcon />{project?.projectType} <span>|</span> <span>{project?.role}</span></div>
                 <p className="description">{project?.description}</p>
-                <div className="role">
+                {/* <div className="role">
                   <p>Role</p>
                   <p>{project?.role}</p>
-                </div>
+                </div> */}
               </div>
             </ProjectWrapper>
           ))}
