@@ -9,26 +9,34 @@ export const ProjectStyled = styled.div`
   justify-content: center;
   align-items: center;
   .content {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
+    display: grid;
+    grid-template-rows: 1fr auto;
     width: 100%;
     height: 100%;
     padding: 70px 20px;
+    gap: 40px;
     box-sizing: border-box;
+    @media screen and (min-width: ${({ theme }) => theme.breakpoint.sm}px) {
+      padding: 70px 20px 50px 20px;
+    }
     @media screen and (min-width: ${({ theme }) => theme.breakpoint.md}px) {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
       padding: 100px 12vw;
     }
     @media screen and (min-width: ${({ theme }) => theme.breakpoint.lg}px) {
       padding: 100px 13vw;
     }
-    display: flex;
-    flex-direction: column;
-    gap: 40px;
+    .preview {
+      display: flex;
+      flex-direction: column;
+    }
     .navigation-root {
       display: flex;
       flex-direction: column;
       gap: 10px;
+      height: fit-content;
       align-items: center;
       .navigation-page-wrapper {
         display: flex;

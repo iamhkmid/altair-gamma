@@ -41,52 +41,54 @@ const Project = () => {
     <ProjectStyled>
       {showImage && <ImageViewer src={srcImgViewer} currentIdx={image} onClose={() => { setShowImage(false) }} />}
       <div className="content">
-        <AnimatePresence mode="popLayout">
-          {projects.map((item) => item.id === preview.key && (
-            <ProjectWrapper key={item.id} variants={previewVariants} initial={preview.type} animate="show" exit={preview.type} >
-              <div className="preview-image">
-                <AnimatePresence mode="popLayout">
-                  {project?.images.map((img, idx) => idx === image && (
-                    <motion.div
-                      key={img}
-                      className="current-image"
-                      initial={{ opacity: 0 }}
-                      animate={{ opacity: 1 }}
-                      exit={{ opacity: 0 }}
-                      layoutId="image-viewer"
-                      onClick={() => !project.development && setShowImage(true)}
-                    >
-                      {!project.development && <div className="image-zoom"><div className="zoom-icon"><ZoomInIcon />Full-Screen</div></div>}
-                      {project.development && <div className="under-development"><div className="dev-icon"><CircleGradientLoader />Under Development</div></div>}
-                      <Image src={img} alt="img" />
-                    </motion.div>
-                  ))}
-                </AnimatePresence>
-                <div className="image-list">
-                  {project?.images.map((img, idx) => (
-                    <div className={`image-wrapper ${idx === image ? 'active' : ''}`} key={img} onClick={() => { setImage(idx) }}>
-                      <Image src={img} alt="img" />
-                      {idx === image && <motion.div className="selected-img" layoutId="selected-img" />}
-                    </div>
-                  ))}
-                </div>
-              </div>
-              <div className="preview-detail">
-                <p className="title">{project?.title}</p>
-                <div className="project-type"><GlobeIcon />{project?.projectType} <span>|</span> <span>{project?.role}</span></div>
-                <p className="description">{project?.description}</p>
-                <div className="techs">
-                  <p>Techs</p>
-                  <div>
-                    {project?.techs.map((tech) => (
-                      <p key={tech}>{tech}</p>
+        <div className="preview">
+          <AnimatePresence mode="popLayout">
+            {projects.map((item) => item.id === preview.key && (
+              <ProjectWrapper key={item.id} variants={previewVariants} initial={preview.type} animate="show" exit={preview.type} >
+                <div className="preview-image">
+                  <AnimatePresence mode="popLayout">
+                    {project?.images.map((img, idx) => idx === image && (
+                      <motion.div
+                        key={img}
+                        className="current-image"
+                        initial={{ opacity: 0 }}
+                        animate={{ opacity: 1 }}
+                        exit={{ opacity: 0 }}
+                        layoutId="image-viewer"
+                        onClick={() => !project.development && setShowImage(true)}
+                      >
+                        {!project.development && <div className="image-zoom"><div className="zoom-icon"><ZoomInIcon />Full-Screen</div></div>}
+                        {project.development && <div className="under-development"><div className="dev-icon"><CircleGradientLoader />Under Development</div></div>}
+                        <Image src={img} alt="img" />
+                      </motion.div>
+                    ))}
+                  </AnimatePresence>
+                  <div className="image-list">
+                    {project?.images.map((img, idx) => (
+                      <div className={`image-wrapper ${idx === image ? 'active' : ''}`} key={img} onClick={() => { setImage(idx) }}>
+                        <Image src={img} alt="img" />
+                        {idx === image && <motion.div className="selected-img" layoutId="selected-img" />}
+                      </div>
                     ))}
                   </div>
                 </div>
-              </div>
-            </ProjectWrapper>
-          ))}
-        </AnimatePresence>
+                <div className="preview-detail">
+                  <p className="title">{project?.title}</p>
+                  <div className="project-type"><GlobeIcon />{project?.projectType} <span>|</span> <span>{project?.role}</span></div>
+                  <p className="description">{project?.description}</p>
+                  <div className="techs">
+                    <p>Techs</p>
+                    <div>
+                      {project?.techs.map((tech) => (
+                        <p key={tech}>{tech}</p>
+                      ))}
+                    </div>
+                  </div>
+                </div>
+              </ProjectWrapper>
+            ))}
+          </AnimatePresence>
+        </div>
         <div className="navigation-root">
           <div className="navigation-page-wrapper">
             {projects.map((val) => (
