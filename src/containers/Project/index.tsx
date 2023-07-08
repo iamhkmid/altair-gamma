@@ -12,7 +12,7 @@ const Project = () => {
   const [preview, setPreview] = React.useState({ key: '1', type: 'next' })
   const [image, setImage] = React.useState(0)
   const [showImage, setShowImage] = React.useState(false)
-  const project = projects.find((value) => value.id === preview.key)
+  const contentRef = React.useRef<HTMLDivElement>(null)
 
   const srcImgViewer = React.useMemo(() => (projects.find((item) => item.id === preview.key)?.images) || [], [preview.key])
 
@@ -27,6 +27,7 @@ const Project = () => {
   }, [preview])
 
   const onClickNav = (type: 'prev' | 'next') => {
+    contentRef.current?.scrollTo({ top: 0, left: 0, behavior: "smooth" })
     setImage(0)
     setPreview({ key: type === 'prev' ? navigation.prev?.id! : navigation.next?.id!, type })
   }
@@ -38,13 +39,13 @@ const Project = () => {
   }
 
   return (
-    <ProjectStyled>
+    <ProjectStyled ref={contentRef}>
       {showImage && <ImageViewer src={srcImgViewer} currentIdx={image} onClose={() => { setShowImage(false) }} />}
       <div className="content">
         <div className="preview">
           <AnimatePresence mode="popLayout">
-            {projects.map((item) => item.id === preview.key && (
-              <ProjectWrapper key={item.id} variants={previewVariants} initial={preview.type} animate="show" exit={preview.type} >
+            {projects.map((project) => project.id === preview.key && (
+              <ProjectWrapper key={project.id} variants={previewVariants} initial={preview.type} animate="show" exit={preview.type} >
                 <div className="preview-image">
                   <AnimatePresence mode="popLayout">
                     {project?.images.map((img, idx) => idx === image && (

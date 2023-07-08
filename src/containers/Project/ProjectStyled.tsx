@@ -8,7 +8,7 @@ export const ProjectStyled = styled.div`
   height: 100%;
   justify-content: center;
   box-sizing: border-box;
-  max-height: 100vh;
+  max-height: 100%;
   overflow-x: hidden;
   overflow-y: auto;
   padding-bottom: 130px;
