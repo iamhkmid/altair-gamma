@@ -261,8 +261,8 @@ export const ProjectWrapper = styled(motion.div)`
         color: ${({ theme }) => theme.colors.rose.L6};
       }
       svg {
-        width: 18px;
-        height: 18px;
+        width: 15px;
+        height: 15px;
         fill: ${({ theme }) => theme.colors.blue[theme.variant === "dark"? "L4" : "L6"]};
         transition: 0.3s all ease-in-out;
       }
@@ -270,15 +270,15 @@ export const ProjectWrapper = styled(motion.div)`
       @media screen and (min-width: ${({ theme }) => theme.breakpoint.sm}px) {
         font-size: 15px;
         svg {
-          height: 19px;
-          width: 19px;
+          height: 16px;
+          width: 16px;
         }
       }
       @media screen and (min-width: ${({ theme }) => theme.breakpoint.xxxl}px) {
         font-size: 15px;
         svg {
-          height: 20px;
-          width: 20px;
+          height: 17px;
+          width: 17px;
         }
       }
       transition: 0.3s all ease-in-out;
