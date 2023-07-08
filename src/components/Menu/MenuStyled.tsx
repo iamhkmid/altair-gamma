@@ -12,6 +12,8 @@ export const MenuStyled = styled(motion.div)`
   padding: 15px 20px;
   box-sizing: border-box;
   top: 0;
+  backdrop-filter: blur(5px);
+  background-color: ${({ theme }) => hexToRgbA(theme.variant === "dark" ? "#000" : "#fff", 0.8)};
   @media screen and (min-width: ${({ theme }) => theme.breakpoint.md}px) {
     padding: 15px 50px;
   }

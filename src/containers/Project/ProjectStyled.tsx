@@ -8,14 +8,13 @@ export const ProjectStyled = styled.div`
   height: 100%;
   justify-content: center;
   box-sizing: border-box;
-  margin-top: 60px;
-  max-height: calc(100vh - 60px);
+  max-height: 100vh;
   overflow-y: auto;
-  padding-bottom: 50px;
-  padding-top: 5vh;
+  padding-bottom: 130px;
+  padding-top: calc(5vh + 60px);
   @media screen and (min-width: ${({ theme }) => theme.breakpoint.md}px) {
-    padding-top: 10vh;
-    margin-top: 70px;
+    padding-top: calc(10vh + 70px);
+    padding-bottom: 50px;
     max-height: calc(100vh - 70px);
   }
 
@@ -53,9 +52,23 @@ export const ProjectStyled = styled.div`
     .navigation-root {
       display: flex;
       flex-direction: column;
+      position: fixed;
+      left: 0;
+      bottom: 0;
+      width: 100%;
+      padding: 20px 20px 10px 20px;
       gap: 10px;
       height: fit-content;
       align-items: center;
+      box-sizing: border-box;
+      backdrop-filter: blur(5px);
+      background-color: ${({ theme }) => hexToRgbA(theme.variant === "dark" ? theme.colors.slate.L11 : theme.colors.slate.L2, 0.5)};
+      @media screen and (min-width: ${({ theme }) => theme.breakpoint.md}px) {
+        position: static;
+        padding: 0;
+        background-color: transparent;
+        margin-top: 50px;
+      }
       .navigation-page-wrapper {
         display: flex;
         width: 100%;
