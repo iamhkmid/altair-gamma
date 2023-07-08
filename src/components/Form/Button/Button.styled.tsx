@@ -1,22 +1,6 @@
 import styled, { css } from 'styled-components'
 import { hexToRgbA } from '../../../utils/hexToRgbA'
 
-export const Main = styled.div`
-  display: flex;
-  flex-direction: column;
-  position: relative;
-  font-size: 14px;
-  align-items: center;
-  .particles {
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    position: absolute;
-    opacity: var(--active, 0);
-    pointer-events: none;
-    transition: 0.2s all ease-in-out;
-  }
-`
 interface TParticles {
   $size: number
   $y: number
@@ -52,22 +36,23 @@ export const Particle = styled.div<TParticles>`
 `
 
 const animateButton = css`
-  ~.particles {
-      --active: 1;
-      --play-state: running;
-    }
-    background-color: ${({ theme }) => theme.colors?.primary.L3};
-    -webkit-box-shadow: 0px 0px 40px 10px ${({ theme }) => hexToRgbA(theme.colors?.primary.L3, 0.5)};
-    -moz-box-shadow: 0px 0px 40px 10px ${({ theme }) => hexToRgbA(theme.colors?.primary.L3, 0.5)};
-    box-shadow: 0px 0px 40px 10px ${({ theme }) => hexToRgbA(theme.colors?.primary.L3, 0.5)};
-    color: ${hexToRgbA('#ffffff', 1)};
-    border: 2px solid ${({ theme }) => hexToRgbA(theme.colors?.primary.L4, 0.2)};
+  .AltairButton-particles {
+    --active: 1;
+    --play-state: running;
+  }
+  background-color: ${({ theme }) => theme.colors?.primary.L3};
+  -webkit-box-shadow: 0px 0px 40px 10px ${({ theme }) => hexToRgbA(theme.colors?.primary.L3, 0.5)};
+  -moz-box-shadow: 0px 0px 40px 10px ${({ theme }) => hexToRgbA(theme.colors?.primary.L3, 0.5)};
+  box-shadow: 0px 0px 40px 10px ${({ theme }) => hexToRgbA(theme.colors?.primary.L3, 0.5)};
+  color: ${hexToRgbA('#ffffff', 1)};
+  border: 2px solid ${({ theme }) => hexToRgbA(theme.colors?.primary.L4, 0.2)};
 `
 
 interface TButton {
   $fullWidth: boolean
   $isIcon: boolean
   $playAnimationOnMobile: boolean
+  $withIcon: boolean
 }
 
 export const ButtonStyled = styled.button<TButton>`
@@ -77,6 +62,7 @@ export const ButtonStyled = styled.button<TButton>`
   gap: 9px;
   align-items: center;
   justify-content: center;
+  position: relative;
   border-radius: 25px;
   box-shadow: 0px 6px 6px ${({ theme }) => theme.colors?.primary.L3} 10;
   box-sizing: border-box;
@@ -85,8 +71,22 @@ export const ButtonStyled = styled.button<TButton>`
   font-size: 11px;
   margin: 0;
   height: 38px;
-  padding: 0 15px;
+  padding: 0 13px;
   width: ${({ $fullWidth }) => ($fullWidth ? '100%' : 'auto')};
+
+  .AltairButton-particles {
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    position: absolute;
+    opacity: var(--active, 0);
+    pointer-events: none;
+    transition: 0.2s all ease-in-out;
+  }
+
+  ${({ $withIcon }) => $withIcon && css`
+    padding: 0 10px 0 15px;
+  `};
 
   ${({ $isIcon }) => $isIcon && css`
     padding: 0;
@@ -116,6 +116,9 @@ export const ButtonStyled = styled.button<TButton>`
     font-size: 13px;
     ${({ $isIcon }) => $isIcon && css`
       padding: 0;
+    `};
+    ${({ $withIcon }) => $withIcon && css`
+      padding: 0 12px 0 15px;
     `};
   }
   @media screen and (min-width: ${({ theme }) => theme.breakpoint?.xxxl}px){

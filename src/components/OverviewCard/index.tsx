@@ -7,6 +7,7 @@ import { motion } from 'framer-motion'
 import Button from '../Form/Button'
 import ProfileImage from '../../assets/images/home_img.webp'
 import CircleGradientLoader from '../Loading/CircleGradientLoader'
+import { downloadFile } from '../../utils/downloadFile'
 
 const OverviewCard: React.FC = () => {
   const [loadImg, setLoadImg] = React.useState(true)
@@ -66,8 +67,18 @@ const OverviewCard: React.FC = () => {
           </div>
           <div className="action">
             {overviewData.action.map((button, idx) => (
-              <motion.div initial={{ opacity: 0, x: -20 }} animate={{ opacity: 1, x: 0 }} transition={{ delay: 0.5 * idx, duration: 0.7 }} key={button.key}>
-                <Button variant={button.variant} playAnimationOnMobile={button.animation} className={button.variant === 'icon' ? 'icon' : ''} onClick={() => { onClickAction(button.url) }} particles={button.particles} key={button.key}>{button.variant === 'text' ? button.label : button.icon}</Button>
+              <motion.div initial={{ opacity: 0, x: -20 }} animate={{ opacity: 1, x: 0 }} transition={{ delay: 0.3 * idx, duration: 0.7 }} key={button.key}>
+                <Button
+                  key={button.key}
+                  variant={button.variant}
+                  playAnimationOnMobile={button.animation}
+                  endIcon={button.variant === "text" ? button.endIcon : null}
+                  className={`${button.variant === 'icon' ? 'icon' : ''} ${button.variant === 'text' && !!button.endIcon ? 'end-icon' : ''}`}
+                  onClick={() => button.isFile ? downloadFile(button.url) : onClickAction(button.url)}
+                  particles={button.particles}
+                >
+                  {button.variant === 'text' ? button.label : button.icon}
+                </Button>
               </motion.div>
             ))}
           </div>
@@ -219,8 +230,24 @@ const OverviewCardStyled = styled.div`
         @media screen and (min-width: ${({ theme }) => theme.breakpoint.md}px) {
           justify-content: flex-start;
         }
-        .AltairButton-root {
+        .AltairButton-root.end-icon .AltairButton-endIcon {
+          display: flex;
           svg {
+            width: 14px;
+            height: 14px;
+            fill: currentColor;
+            @media screen and (min-width: ${({ theme }) => theme.breakpoint.md}px) {
+              width: 15px;
+              height: 15px;
+            }
+            @media screen and (min-width: ${({ theme }) => theme.breakpoint.xxxl}px) {
+              width: 16px;
+              height: 16px;
+            }
+          }
+          }
+        .AltairButton-root {
+          > svg {
             width: 14px;
             height: 14px;
             fill: currentColor;

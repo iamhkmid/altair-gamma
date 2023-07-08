@@ -9,6 +9,7 @@ export type ButtonProps = React.HTMLAttributes<HTMLButtonElement> & {
   disabled?: boolean
   particles?: number
   playAnimationOnMobile?: boolean
+  endIcon?: ReactElement | null
 }
 
 export interface TParticle {

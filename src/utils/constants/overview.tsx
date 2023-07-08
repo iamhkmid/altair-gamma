@@ -2,6 +2,7 @@ import React from 'react'
 import { ReactComponent as Linkedin } from '../../assets/icons/linkedin.svg'
 import { ReactComponent as Instagram } from '../../assets/icons/instagram.svg'
 import { ReactComponent as Github } from '../../assets/icons/github.svg'
+import { ReactComponent as Download } from '../../assets/icons/caret-down.svg'
 
 interface TOverviewData {
   text1: string
@@ -9,21 +10,22 @@ interface TOverviewData {
   description: string
   action: Array<{
     key: string
-    variant: 'text'
     label: string
-    url: string
+    isFile?: boolean
     particles: number
-    animation?: boolean
-  } |
-  {
-    key: string
-    variant: 'icon'
-    label: string
     url: string
-    icon: React.ReactElement
-    particles: number
     animation?: boolean
-  }>
+  } & (
+      {
+        variant: "text"
+        endIcon: React.ReactElement | null
+      } |
+      {
+        key: string
+        variant: 'icon'
+        icon: React.ReactElement
+      }
+    )>
 }
 
 export const overviewData: TOverviewData = {
@@ -36,11 +38,22 @@ export const overviewData: TOverviewData = {
       variant: 'text',
       label: 'Contact me',
       url: 'https://wa.link/i42azx',
+      endIcon: null,
       particles: 15,
       animation: true
     },
     {
       key: '2',
+      variant: 'text',
+      label: 'CV',
+      url: "/static/resume-fe-luqman.pdf",
+      particles: 12,
+      endIcon: <Download />,
+      animation: true,
+      isFile: true
+    },
+    {
+      key: '3',
       variant: 'icon',
       label: 'Linkedin',
       url: 'https://www.linkedin.com/in/iamhkmid/',
@@ -48,7 +61,7 @@ export const overviewData: TOverviewData = {
       particles: 10
     },
     {
-      key: '3',
+      key: '4',
       variant: 'icon',
       label: 'Instagram',
       url: 'https://www.instagram.com/iamhkmid/',
