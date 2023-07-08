@@ -49,7 +49,7 @@ export const overviewData: TOverviewData = {
       url: "/static/resume-fe-luqman.pdf",
       particles: 12,
       endIcon: <Download />,
-      animation: true,
+      animation: false,
       isFile: true
     },
     {
