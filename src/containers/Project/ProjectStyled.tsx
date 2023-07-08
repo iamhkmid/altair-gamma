@@ -90,11 +90,6 @@ export const ProjectWrapper = styled(motion.div)`
         height: calc(600px / 16 * 9);
       }
       position: relative;
-      &:hover {
-        .image-zoom {
-          opacity: 1;
-        }
-      }
       .under-development {
         display: flex;
         pointer-events: none;
@@ -120,6 +115,7 @@ export const ProjectWrapper = styled(motion.div)`
           font-size: 11px;
           font-weight: 700;
           border-radius: 10px;
+          backdrop-filter: blur(5px);
           background: ${({ theme }) => hexToRgbA(theme.colors.text.L1, 0.7)};
           @media screen and (min-width: ${({ theme }) => theme.breakpoint.xxxl}px) {
             padding: 10px 15px;
@@ -140,6 +136,11 @@ export const ProjectWrapper = styled(motion.div)`
           -webkit-user-select: none; /* Safari */
           -ms-user-select: none; /* IE 10 and IE 11 */
           user-select: none; /* Standard syntax */
+        }
+      }
+      &:hover {
+        .image-zoom {
+          opacity: 1;
         }
       }
       .image-zoom {
@@ -186,7 +187,7 @@ export const ProjectWrapper = styled(motion.div)`
       display: grid;
       grid-template-columns: repeat(5, minmax(30px, 1fr));
       gap: 5px;
-      width: 100%;
+      width: calc(100% - 5px);
       .image-wrapper{
         display: flex;
         flex-direction: column;
