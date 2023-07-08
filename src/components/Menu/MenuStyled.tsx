@@ -92,7 +92,7 @@ export const MenuStyled = styled(motion.div)`
       gap: 5px;
       /* box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px; */
       backdrop-filter: blur(5px);
-      background-color: ${({ theme }) => hexToRgbA(theme.colors.text.L1, 0.3)};
+      background-color: ${({ theme }) => hexToRgbA(theme.variant === "dark" ? theme.colors.slate.L11 : theme.colors.slate.L2, 0.5)};
       border: 1px solid ${({ theme }) => hexToRgbA(theme.colors.text.L3, 0.2)};
       border-radius: 5px;
       ::after {
@@ -211,7 +211,7 @@ export const MenuStyled = styled(motion.div)`
             border-radius: 5px;
             overflow: hidden;
             filter: blur(15px);
-            background: ${({ theme }) => hexToRgbA(theme.colors.rose.L8, theme.variant === "light"? 0.3 : 0.7)};
+            background: ${({ theme }) => hexToRgbA(theme.colors.rose.L8, theme.variant === "light" ? 0.3 : 0.7)};
             transition: opacity 0.3s linear;
             z-index: -1;
             opacity: 0;
