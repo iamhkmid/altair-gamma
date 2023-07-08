@@ -13,12 +13,9 @@ export const ProjectStyled = styled.div`
     grid-template-rows: 1fr auto;
     width: 100%;
     height: 100%;
-    padding: 70px 20px;
+    padding: 70px 20px 50px 20px;
     gap: 40px;
     box-sizing: border-box;
-    @media screen and (min-width: ${({ theme }) => theme.breakpoint.sm}px) {
-      padding: 70px 20px 50px 20px;
-    }
     @media screen and (min-width: ${({ theme }) => theme.breakpoint.md}px) {
       display: flex;
       flex-direction: column;
