@@ -263,10 +263,10 @@ export const ProjectWrapper = styled(motion.div)`
       svg {
         width: 15px;
         height: 15px;
-        fill: ${({ theme }) => theme.colors.blue[theme.variant === "dark"? "L4" : "L6"]};
+        fill: ${({ theme }) => theme.colors.blue[theme.variant === "dark" ? "L4" : "L6"]};
         transition: 0.3s all ease-in-out;
       }
-      color: ${({ theme }) =>  theme.colors.blue[theme.variant === "dark"? "L4" : "L6"]};
+      color: ${({ theme }) => theme.colors.blue[theme.variant === "dark" ? "L4" : "L6"]};
       @media screen and (min-width: ${({ theme }) => theme.breakpoint.sm}px) {
         font-size: 15px;
         svg {
@@ -297,40 +297,53 @@ export const ProjectWrapper = styled(motion.div)`
       }
       transition: 0.3s all ease-in-out;
     }
-    .role {
+    .techs {
       display: flex;
+      flex-direction: column;
       gap: 10px;
       margin-top: 30px;
       width: fit-content;
       > p:nth-child(1) {
         margin: 0;
         font-size: 13px;
-        font-weight: 800;
+        font-weight: 600;
         text-transform: uppercase;
         color: ${({ theme }) => hexToRgbA(theme.colors.text.L4)};
-        padding-right: 10px;
-        border-right: 1px solid ${({ theme }) => hexToRgbA(theme.colors.text.L4)};
       }
-      > p:nth-child(2) {
-        font-size: 13px;
-        font-weight: 600;
-        margin: 0;
-        color: ${({ theme }) => theme.colors.rose.L6};
+      > div:nth-child(2) {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 10px;
+        > p {
+          padding: 2px 7px;
+          border-radius: 5px;
+          backdrop-filter: blur(5px);
+          background-color: ${({ theme }) => hexToRgbA(theme.colors.blue.L7, 0.3)};
+          font-size: 13px;
+          font-weight: 500;
+          margin: 0;
+          color: ${({ theme }) => theme.colors.primary.L4};
+        }
       }
       @media screen and (min-width: ${({ theme }) => theme.breakpoint.sm}px) {
         > p:nth-child(1) {
           font-size: 14px;
         }
-        > p:nth-child(2) {
-          font-size: 14px;
+        > div:nth-child(2) {
+          > p {
+            font-size: 14px;
+          }
         }
       }
       @media screen and (min-width: ${({ theme }) => theme.breakpoint.xxxl}px) {
         > p:nth-child(1) {
           font-size: 15px;
         }
-        > p:nth-child(2) {
-          font-size: 15px;
+        > div:nth-child(2) {
+          > p {
+            padding: 3px 10px;
+            font-size: 15px;
+          }
         }
       }
       transition: 0.3s all ease-in-out;
