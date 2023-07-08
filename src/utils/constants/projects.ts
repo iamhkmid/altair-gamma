@@ -6,7 +6,7 @@ export const projects = [
     development: false,
     projectType: "E-Commerce",
     role: "Fullstack",
-    techs: ["Typescript", "Next JS", "Express JS", "Graphql", "Styled Components"],
+    techs: ["Typescript", "Next JS", "Styled Components", "Express JS", "Graphql", "MySQL", "Web Socket", "Midtrans Core API"],
     images: [
       '/projects/dp1.png',
       '/projects/dp2.png',
@@ -22,7 +22,7 @@ export const projects = [
     development: false,
     projectType: "Book Catalog",
     role: "Fullstack",
-    techs: ["Typescript", "Next JS", "Express JS", "Graphql", "Material UI", "Styled Components"],
+    techs: ["Typescript", "Next JS", "Material UI", "Styled Components", "Express JS", "Graphql", "PostgreSQL"],
     images: [
       '/projects/ubb1.png',
       '/projects/ubb2.png',
