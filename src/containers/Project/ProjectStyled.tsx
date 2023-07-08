@@ -11,14 +11,16 @@ export const ProjectStyled = styled.div`
   .content {
     display: flex;
     flex-direction: column;
+    justify-content: center;
     width: 100%;
-    padding: 20px;
+    height: 100%;
+    padding: 100px 20px;
     box-sizing: border-box;
-    @media screen and (min-width: ${({ theme }) => theme.breakpoint.lg}px) {
-      padding: 0 12vw;
+    @media screen and (min-width: ${({ theme }) => theme.breakpoint.md}px) {
+      padding: 100px 12vw;
     }
     @media screen and (min-width: ${({ theme }) => theme.breakpoint.lg}px) {
-      padding: 0 13vw;
+      padding: 100px 13vw;
     }
     display: flex;
     flex-direction: column;
