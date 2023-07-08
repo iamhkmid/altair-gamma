@@ -332,21 +332,7 @@ export const ProjectWrapper = styled(motion.div)`
       font-size: 11px;
       font-weight: 300;
       max-height: 70px;
-      height: 70px;
-      overflow-y: auto;
-      &::-webkit-scrollbar {
-        width: 5px;
-      }
-      &::-webkit-scrollbar-track {
-        background: transparent;
-      }
-      &::-webkit-scrollbar-thumb {
-        border-radius: 5px;
-        background:  ${({ theme }) => hexToRgbA(theme.colors.primary.L4, 0.6)};
-      }
-      &::-webkit-scrollbar-thumb:hover {
-        background:  ${({ theme }) => hexToRgbA(theme.colors.primary.L4, 0.8)};
-      }
+      
       @media screen and (min-width: ${({ theme }) => theme.breakpoint.md}px) {
         font-size: 12px;
         height: unset;
@@ -362,11 +348,6 @@ export const ProjectWrapper = styled(motion.div)`
       flex-direction: column;
       gap: 10px;
       margin-top: 30px;
-      height: 100px;
-      width: fit-content;
-      @media screen and (min-width: ${({ theme }) => theme.breakpoint.sm}px) {
-        height: unset;
-      }
       > p:nth-child(1) {
         margin: 0;
         font-size: 12px;
