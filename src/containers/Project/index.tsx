@@ -3,6 +3,7 @@ import { projects } from '../../utils/constants/projects'
 import { AnimatePresence, type Variants, motion } from 'framer-motion'
 import Image from '../../components/Image'
 import { ReactComponent as ZoomInIcon } from '../../assets/icons/add-circle-outline.svg'
+import { ReactComponent as GlobeIcon } from '../../assets/icons/grid.svg'
 import ImageViewer from '../../components/ImageViewer'
 import CircleGradientLoader from '../../components/Loading/CircleGradientLoader'
 import { NavigationBtn, ProjectStyled, ProjectWrapper } from './ProjectStyled'
@@ -72,8 +73,12 @@ const Project = () => {
               </div>
               <div className="preview-detail">
                 <p className="title">{project?.title}</p>
-                <p className="project-type">{project?.projectType}</p>
+                <div className="project-type"><GlobeIcon />{project?.projectType}</div>
                 <p className="description">{project?.description}</p>
+                <div className="role">
+                  <p>Role</p>
+                  <p>{project?.role}</p>
+                </div>
               </div>
             </ProjectWrapper>
           ))}

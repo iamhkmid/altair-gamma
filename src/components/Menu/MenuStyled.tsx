@@ -20,6 +20,7 @@ export const MenuStyled = styled(motion.div)`
   }
   .left {
     display: flex;
+    cursor: pointer;
   }
   .title {
     display: flex;

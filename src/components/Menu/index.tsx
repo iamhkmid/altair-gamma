@@ -1,4 +1,4 @@
-import { NavLink, useLoaderData, useLocation } from 'react-router-dom'
+import { NavLink, useLoaderData, useLocation, useNavigate } from 'react-router-dom'
 import { MenuStyled } from './MenuStyled'
 import { type TRootLoaderData } from '../../containers/Root/Root.types'
 import { AnimatePresence, type Variants, motion } from 'framer-motion'
@@ -14,6 +14,7 @@ const Menu = () => {
   const [activeMenu, setActiveMenu] = React.useState(false)
   const refButton = React.useRef<HTMLDivElement>(null)
   const refContent = React.useRef<HTMLUListElement>(null)
+  const navigate = useNavigate()
 
   React.useEffect(() => {
     const listener = (event: any) => {
@@ -45,7 +46,7 @@ const Menu = () => {
   return (
     <MenuStyled initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ delay: 0.5, duration: 0.7 }}>
       <div className="left">
-        <motion.div className="title" animate={{ opacity: withTitle ? 1 : 0 }}>
+        <motion.div className="title" animate={{ opacity: withTitle ? 1 : 0 }} onClick={() => navigate("/home")}>
           <p>{'<MuhammadLuqmanulHakim />'}</p>
           <p>Frontend Developer</p>
         </motion.div>

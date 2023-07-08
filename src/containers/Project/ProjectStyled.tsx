@@ -246,23 +246,39 @@ export const ProjectWrapper = styled(motion.div)`
       @media screen and (min-width: ${({ theme }) => theme.breakpoint.xxxl}px) {
         font-size: 33px;
       }
+      transition: 0.3s all ease-in-out;
     }
     .project-type {
-      color: ${({ theme }) => theme.colors.text.L5};
-      margin: 0;
+      display: flex;
+      gap: 7px;
+      align-items: center;
       margin-top: 5px;
       font-size: 12px;
-      font-weight: 500;
-      width: fit-content;
-      padding: 3px 10px;
+      font-weight: 600;
       border-radius: 5px;
-      background-color: ${({ theme }) => hexToRgbA(theme.colors.rose.L6, 0.4)};
+      text-transform: uppercase;
+      svg {
+        width: 18px;
+        height: 18px;
+        fill: ${({ theme }) => theme.colors.blue[theme.variant === "dark"? "L4" : "L6"]};
+        transition: 0.3s all ease-in-out;
+      }
+      color: ${({ theme }) =>  theme.colors.blue[theme.variant === "dark"? "L4" : "L6"]};
       @media screen and (min-width: ${({ theme }) => theme.breakpoint.sm}px) {
-        font-size: 13px;
+        font-size: 15px;
+        svg {
+          height: 19px;
+          width: 19px;
+        }
       }
       @media screen and (min-width: ${({ theme }) => theme.breakpoint.xxxl}px) {
-        font-size: 14px;
+        font-size: 15px;
+        svg {
+          height: 20px;
+          width: 20px;
+        }
       }
+      transition: 0.3s all ease-in-out;
     }
     .description {
       color: ${({ theme }) => theme.colors.text.L4};
@@ -270,13 +286,51 @@ export const ProjectWrapper = styled(motion.div)`
       margin-top: 15px;
       font-size: 11px;
       font-weight: 300;
-      height: 50px;
       @media screen and (min-width: ${({ theme }) => theme.breakpoint.md}px) {
         font-size: 12px;
       }
       @media screen and (min-width: ${({ theme }) => theme.breakpoint.xxxl}px) {
         font-size: 16px;
       }
+      transition: 0.3s all ease-in-out;
+    }
+    .role {
+      display: flex;
+      gap: 10px;
+      margin-top: 30px;
+      width: fit-content;
+      > p:nth-child(1) {
+        margin: 0;
+        font-size: 13px;
+        font-weight: 800;
+        text-transform: uppercase;
+        color: ${({ theme }) => hexToRgbA(theme.colors.text.L4)};
+        padding-right: 10px;
+        border-right: 1px solid ${({ theme }) => hexToRgbA(theme.colors.text.L4)};
+      }
+      > p:nth-child(2) {
+        font-size: 13px;
+        font-weight: 600;
+        margin: 0;
+        color: ${({ theme }) => theme.colors.rose.L6};
+      }
+      @media screen and (min-width: ${({ theme }) => theme.breakpoint.sm}px) {
+        > p:nth-child(1) {
+          font-size: 14px;
+        }
+        > p:nth-child(2) {
+          font-size: 14px;
+        }
+      }
+      @media screen and (min-width: ${({ theme }) => theme.breakpoint.xxxl}px) {
+        > p:nth-child(1) {
+          font-size: 15px;
+        }
+        > p:nth-child(2) {
+          font-size: 15px;
+        }
+      }
+      transition: 0.3s all ease-in-out;
     }
   }
 `
