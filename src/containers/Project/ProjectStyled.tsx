@@ -13,7 +13,7 @@ export const ProjectStyled = styled.div`
     grid-template-rows: 1fr auto;
     width: 100%;
     height: 100%;
-    padding: 70px 20px 50px 20px;
+    padding: 70px 20px 60px 20px;
     gap: 40px;
     box-sizing: border-box;
     @media screen and (min-width: ${({ theme }) => theme.breakpoint.md}px) {
@@ -308,11 +308,14 @@ export const ProjectWrapper = styled(motion.div)`
       display: flex;
       flex-direction: column;
       gap: 10px;
-      margin-top: 30px;
+      margin-top: 15px;
       width: fit-content;
+      @media screen and (min-width: ${({ theme }) => theme.breakpoint.md}px) {
+        margin-top: 30px;
+      }
       > p:nth-child(1) {
         margin: 0;
-        font-size: 13px;
+        font-size: 12px;
         font-weight: 600;
         text-transform: uppercase;
         color: ${({ theme }) => hexToRgbA(theme.colors.text.L4)};
@@ -326,7 +329,7 @@ export const ProjectWrapper = styled(motion.div)`
           border-radius: 5px;
           backdrop-filter: blur(5px);
           background-color: ${({ theme }) => hexToRgbA(theme.colors.blue.L7, 0.3)};
-          font-size: 12px;
+          font-size: 11px;
           font-weight: 500;
           margin: 0;
           color: ${({ theme }) => theme.colors.primary.L4};
