@@ -5,9 +5,10 @@ import Menu from '../../components/Menu'
 import { menu } from '../../utils/constants/menu'
 import GlowBg from '../../components/GlowBg'
 import { AnimatePresence, motion } from 'framer-motion'
-import { hexToRgbA } from '../../utils/hexToRgbA'
+import { getbrowserName } from '../../utils/checkBrowser'
 
 export const RootLoader = (args: LoaderFunctionArgs) => {
+  console.log(getbrowserName())
   const url = new URL(args.request.url)
   if (url.pathname === '/') return redirect('/home')
   return { menu }
@@ -24,7 +25,7 @@ const Root = () => {
 
   return (
     <RootStyled>
-      <Menu/>
+      <Menu />
       <AnimatePresence mode="popLayout">
         <motion.div className="animate-wrapper" key={location.pathname}>
           <AnimatedOutlet />
