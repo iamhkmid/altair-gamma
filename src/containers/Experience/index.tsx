@@ -30,6 +30,7 @@ const Experience = () => {
                 />
               </div>
               <div className="detail">
+                <p>{`${exp.startDate} - ${exp.endDate}`}</p>
                 <p>{exp.role}</p>
                 <p>{exp.company}</p>
                 <p>{exp.description}</p>

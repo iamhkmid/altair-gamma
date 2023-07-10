@@ -71,7 +71,7 @@ export const ExperienceItem = styled(motion.div) <TExperienceItem>`
     width: 600px;
   }
   @media screen and (min-width: ${({ theme }) => theme.breakpoint.xxxl}px) {
-    width: 600px;
+    width: 700px;
   }
   .stage {
     display: flex;
@@ -162,6 +162,18 @@ export const ExperienceItem = styled(motion.div) <TExperienceItem>`
     display: flex;
     flex-direction: column;
     > p:nth-child(1){
+      font-size: 12px;
+      font-weight: 600;
+      margin: 0;
+      color: ${({ theme }) => hexToRgbA(theme.colors.rose.L6, 1)};
+      @media screen and (min-width: ${({ theme }) => theme.breakpoint.md}px) {
+        font-size: 13px;
+      }
+      @media screen and (min-width: ${({ theme }) => theme.breakpoint.xxxl}px) {
+        font-size: 15px;
+      }
+    }
+    > p:nth-child(2){
       font-size: 18px;
       font-weight: 700;
       margin: 0;
@@ -173,19 +185,19 @@ export const ExperienceItem = styled(motion.div) <TExperienceItem>`
         font-size: 27px;
       }
     }
-    > p:nth-child(2){
-      font-size: 12px;
+    > p:nth-child(3){
+      font-size: 13px;
       font-weight: 600;
       margin: 0;
       color: ${({ theme }) => theme.colors.blue[theme.variant === "dark" ? "L4" : "L6"]};
       @media screen and (min-width: ${({ theme }) => theme.breakpoint.md}px) {
-        font-size: 14px;
+        font-size: 15px;
       }
       @media screen and (min-width: ${({ theme }) => theme.breakpoint.xxxl}px) {
-        font-size: 17px;
+        font-size: 18px;
       }
     }
-    > p:nth-child(3){
+    > p:nth-child(4){
       padding-top: 10px;
       font-size: 11px;
       font-weight: 400;
