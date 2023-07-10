@@ -19,7 +19,7 @@ export default function ErrorElement() {
           <i>{error.message}</i>
         </p>
       )}
-      <Button onClick={() => navigate("/home")} particles={10}>Back to home</Button>
+      <Button onClick={() => navigate("/home")} particles={10} playAnimationOnMobile>Back to home</Button>
     </ErrorStyled>
   )
 }
