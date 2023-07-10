@@ -13,5 +13,10 @@ export const menu = [
     key: '3',
     label: 'Experience',
     pathname: '/experience'
+  },
+  {
+    key: '4',
+    label: 'About',
+    pathname: '/about'
   }
 ]
