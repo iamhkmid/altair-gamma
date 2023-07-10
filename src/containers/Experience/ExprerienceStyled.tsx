@@ -161,6 +161,15 @@ export const ExperienceItem = styled(motion.div) <TExperienceItem>`
   .detail {
     display: flex;
     flex-direction: column;
+    border: 1px solid transparent;
+    border-radius: 5px;
+    position: relative;
+    top: -10px;
+    &:hover {
+      border: 1px solid ${({ theme }) => hexToRgbA(theme.colors.blue.L6, 0.5)};
+    }
+    transition: 0.3s all ease;
+    padding: 10px;
     > p:nth-child(1){
       font-size: 12px;
       font-weight: 600;
