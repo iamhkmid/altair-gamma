@@ -33,12 +33,29 @@ const ErrorStyled = styled.div`
   gap: 10px;
   color: ${({ theme }) => theme.colors.text.L5};
   .title {
-    font-size: 40px;
+    font-size: 28px;
     margin: 0;
   }
   .description {
-    font-size: 18px;
+    font-size: 12px;
     margin: 0;
+  }
+  
+  @media screen and (min-width: ${({ theme }) => theme.breakpoint.md}px) {
+    .title {
+      font-size: 35px;
+    }
+    .description {
+      font-size: 15px;
+    }
+  }
+  @media screen and (min-width: ${({ theme }) => theme.breakpoint.lg}px) {
+    .title {
+      font-size: 40px;
+    }
+    .description {
+      font-size: 18px;
+    }
   }
   .AltairButton-root {
     margin-top: 20px;
