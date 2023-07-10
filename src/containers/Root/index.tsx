@@ -8,7 +8,7 @@ import { AnimatePresence, motion } from 'framer-motion'
 import { getbrowserName } from '../../utils/checkBrowser'
 
 export const RootLoader = (args: LoaderFunctionArgs) => {
-  // console.log(getbrowserName())
+  // console.log(getbrowserName())  
   const url = new URL(args.request.url)
   if (url.pathname === '/') return redirect('/home')
   return { menu }
