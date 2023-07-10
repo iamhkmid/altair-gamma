@@ -1,4 +1,4 @@
-import { styled } from "styled-components";
+import { css, styled } from "styled-components";
 import { hexToRgbA } from "../../utils/hexToRgbA";
 import { motion } from "framer-motion";
 
@@ -60,7 +60,7 @@ type TExperienceItem = {
   $length: number
 }
 
-export const ExperienceItem = styled(motion.div)<TExperienceItem>`
+export const ExperienceItem = styled(motion.div) <TExperienceItem>`
   display: flex;
   gap: 20px;
   width: 100%;
@@ -88,6 +88,7 @@ export const ExperienceItem = styled(motion.div)<TExperienceItem>`
       width: 30px;
       padding: 8px;
       box-sizing: border-box;
+      background-color: ${({ theme }) => hexToRgbA(theme.colors.blue.L6, 0.3)};
       @media screen and (min-width: ${({ theme }) => theme.breakpoint.md}px) {
         height: 35px;
         width: 35px;
@@ -98,14 +99,13 @@ export const ExperienceItem = styled(motion.div)<TExperienceItem>`
         width: 40px;
         padding: 10px;
       }
-      background-color: ${({ theme }) => hexToRgbA(theme.colors.rose.L6, 0.5)};
       > svg {
         width: 100%;
         height: 100%;
         position: relative;
         z-index: 1;
         path {
-          color: ${({ theme }) => hexToRgbA(theme.colors.slate.L1, 0.8)};
+          color: ${({ theme }) => theme.variant === "dark" ? hexToRgbA(theme.colors.blue.L1, 0.8) : hexToRgbA(theme.colors.blue.L6, 0.7)};
           stroke-width: 90px;
         }
       }
@@ -116,7 +116,7 @@ export const ExperienceItem = styled(motion.div)<TExperienceItem>`
         width: 80%;
         height: 80%;
         border-radius: 100%;
-        background-color: ${({ theme }) => hexToRgbA(theme.colors.slate.L1, 0.8)};
+        background-color: ${({ theme }) => theme.variant === "dark" ? hexToRgbA(theme.colors.blue.L1, 0.8) : hexToRgbA(theme.colors.blue.L6, 0.5)};
       }
       &::before {
         content: "";
@@ -127,7 +127,7 @@ export const ExperienceItem = styled(motion.div)<TExperienceItem>`
         width: 200%;
         height: 200%;
         border-radius: 100%;
-        background-color: ${({ theme }) => hexToRgbA(theme.colors.rose.L7, 1)};
+        background-color: ${({ theme }) => hexToRgbA(theme.colors.blue.L6, 1)};
         animation: animloader 1.5s ease-in infinite;
         -webkit-animation-play-state: ${({ $idx }) => $idx === 0 ? "running" : "paused"};
         animation-play-state: ${({ $idx }) => $idx === 0 ? "running" : "paused"};
@@ -149,7 +149,7 @@ export const ExperienceItem = styled(motion.div)<TExperienceItem>`
       width: 4px;
       border-radius: 5px;
       height: 70px;
-      background-color: ${({ theme }) => hexToRgbA(theme.colors.rose.L6, 0.5)};
+      background-color: ${({ theme }) => hexToRgbA(theme.colors.blue.L6, 0.5)};
       @media screen and (min-width: ${({ theme }) => theme.breakpoint.md}px) {
         height: 80px;
       }

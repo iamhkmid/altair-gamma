@@ -94,9 +94,8 @@ export const MenuStyled = styled(motion.div)`
       overflow: hidden;
       list-style-type: none;
       gap: 5px;
-      /* box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px; */
       backdrop-filter: blur(5px);
-      background-color: ${({ theme }) => hexToRgbA(theme.variant === "dark" ? theme.colors.slate.L11 : theme.colors.slate.L2, 0.5)};
+      background-color: ${({ theme }) => theme.variant === "dark" ? hexToRgbA(theme.colors.slate.L11, 0.9) : hexToRgbA(theme.colors.slate.L2, 0.5)};
       border: 1px solid ${({ theme }) => hexToRgbA(theme.colors.text.L3, 0.2)};
       border-radius: 5px;
       ::after {
@@ -108,7 +107,6 @@ export const MenuStyled = styled(motion.div)`
         bottom: 0;
         border-radius: 5px;
         overflow: hidden;
-        /* background-color: ${({ theme }) => hexToRgbA(theme.colors.rose.L11, 0.2)}; */
         z-index: -1;
         opacity: 1;
       }  
