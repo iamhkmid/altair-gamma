@@ -15,8 +15,8 @@ export const experiences = [
   },
   {
     role: "Bachelor of Information System",
-    company: 'UPN "Veteran Yogyakarta',
-    description: "Develop and maintenance Internet Banking Website",
+    company: 'UPN "Veteran" Yogyakarta',
+    description: "Bachelor of Information System with GPA 3.51 / 4.00",
     startDate: "April 2017",
     endDate: "January 2022"
   },
