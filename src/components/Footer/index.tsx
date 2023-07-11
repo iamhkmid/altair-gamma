@@ -25,7 +25,7 @@ const FooterStyled = styled.div`
   z-index: 100;
   padding: 10px 20px;
   backdrop-filter: blur(5px);
-  background-color: ${({ theme }) => hexToRgbA(theme.colors.text.L1, 0.5)};
+  background-color: ${({ theme }) => hexToRgbA(theme.colors.blue.L10, 0.2)};
   box-sizing: border-box;
   .footer-left {
     display: flex;
