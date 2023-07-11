@@ -6,6 +6,7 @@ import { menu } from '../../utils/constants/menu'
 import GlowBg from '../../components/GlowBg'
 import { AnimatePresence, motion } from 'framer-motion'
 import { getbrowserName } from '../../utils/checkBrowser'
+import Footer from '../../components/Footer'
 
 export const RootLoader = (args: LoaderFunctionArgs) => {
   // console.log(getbrowserName())  
@@ -26,6 +27,7 @@ const Root = () => {
   return (
     <RootStyled>
       <Menu />
+      <Footer />
       <AnimatePresence mode="popLayout">
         <motion.div className="animate-wrapper" key={location.pathname}>
           <AnimatedOutlet />
