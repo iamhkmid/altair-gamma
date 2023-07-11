@@ -11,7 +11,7 @@ const Footer = () => {
   return (
     <FooterStyled>
       <div className="footer-left">
-        <p>July 2023, Build by Muhammad Luqmanul Hakim.</p>
+        <p>2023, Build by Muhammad Luqmanul Hakim.</p>
       </div>
       <div className="footer-right">
         <div className="media">
