@@ -55,7 +55,7 @@ export const ProjectStyled = styled.div`
       flex-direction: column;
       position: fixed;
       left: 0;
-      bottom: 0;
+      bottom: 30px;
       width: 100%;
       padding: 20px 20px 10px 20px;
       gap: 10px;
