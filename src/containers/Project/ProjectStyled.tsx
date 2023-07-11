@@ -11,7 +11,7 @@ export const ProjectStyled = styled.div`
   max-height: 100%;
   overflow-x: hidden;
   overflow-y: auto;
-  padding-bottom: 130px;
+  padding-bottom: 150px;
   padding-top: calc(5vh + 60px);
   @media screen and (min-width: ${({ theme }) => theme.breakpoint.md}px) {
     padding-top: calc(10vh + 70px);

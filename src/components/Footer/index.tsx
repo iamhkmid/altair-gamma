@@ -11,7 +11,7 @@ const Footer = () => {
   return (
     <FooterStyled>
       <div className="footer-left">
-        <p>© 2023 Altair Gamma, by Muhammad Luqmanul Hakim</p>
+        <p>Website by Muhammad Luqmanul Hakim</p>
       </div>
       <div className="footer-right">
         <div className="media">
