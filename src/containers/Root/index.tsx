@@ -29,9 +29,9 @@ const Root = () => {
       <AnimatePresence mode="popLayout">
         <motion.div className="animate-wrapper" key={location.pathname}>
           <AnimatedOutlet />
+          <GlowBg />
         </motion.div>
       </AnimatePresence>
-      <GlowBg />
     </RootStyled>
   )
 }

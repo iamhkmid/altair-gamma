@@ -35,6 +35,7 @@ export const ExperienceStyled = styled(motion.div)`
   .content {
     display: flex;
     flex-direction: column;
+    position: relative;
     width: 100%;
     height: fit-content;
     padding: 0 20px;
@@ -46,11 +47,60 @@ export const ExperienceStyled = styled(motion.div)`
     @media screen and (min-width: ${({ theme }) => theme.breakpoint.lg}px) {
       padding: 0 13vw;
     }
+    .title {
+      margin: 0;
+      font-size: 35px;
+      font-weight: 700;
+      color: ${({ theme }) => theme.colors.text.L5};
+    @media screen and (min-width: ${({ theme }) => theme.breakpoint.md}px) {
+      font-size: 40px;
+    }
+    @media screen and (min-width: ${({ theme }) => theme.breakpoint.lg}px) {
+      font-size: 50px;
+    }
+    }
     .experiences {
       display: flex;
       flex-direction: column;
       align-items: center;
       gap: 5px;
+    }
+    .light1 {
+      content: '';
+      top: 0;
+      right: 50%;
+      position: absolute;
+      filter: blur(45px);
+      background: radial-gradient(${({ theme }) => hexToRgbA(theme.colors.blue?.L8, 0.4)}, ${({ theme }) => hexToRgbA(theme.colors.blue?.L8, 0.1)}, rgba(1, 65, 255, 0));
+      transform: translateZ(0);
+      width: 500px;
+      height: 500px;
+      z-index: -1;
+      animation: animate1 10s infinite;
+    }
+    .light2 {
+      content: '';
+      left: 50%;
+      bottom: 0;
+      position: absolute;
+      filter: blur(45px);
+      transform: translateZ(0);
+      background: radial-gradient(${({ theme }) => hexToRgbA(theme.colors.rose.L9, 0.25)}, rgba(1, 65, 255, 0));
+      width: 400px;
+      height: 400px;
+      z-index: -1;
+      animation: animate2 10s infinite;
+    }
+    @keyframes animate1 {
+      0%   { opacity: 0.5;}
+      50%   { opacity: 1;}
+      100% { opacity: 0.5;}
+    }
+    
+    @keyframes animate2 {
+      0%   { opacity: 1;}
+      50%   { opacity: 0.5;}
+      100% { opacity: 1;}
     }
   }
 `
@@ -161,13 +211,9 @@ export const ExperienceItem = styled(motion.div) <TExperienceItem>`
   .detail {
     display: flex;
     flex-direction: column;
-    border: 1px solid transparent;
     border-radius: 5px;
     position: relative;
     top: -10px;
-    &:hover {
-      border: 1px solid ${({ theme }) => hexToRgbA(theme.colors.blue.L6, 0.5)};
-    }
     transition: 0.3s all ease;
     padding: 10px;
     > p:nth-child(1){

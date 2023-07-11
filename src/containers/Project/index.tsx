@@ -42,6 +42,8 @@ const Project = () => {
     <ProjectStyled ref={contentRef}>
       {showImage && <ImageViewer src={srcImgViewer} currentIdx={image} onClose={() => { setShowImage(false) }} />}
       <div className="content">
+        <div className="light1" />
+        <div className="light2" />
         <div className="preview">
           <AnimatePresence mode="popLayout">
             {projects.map((project) => project.id === preview.key && (

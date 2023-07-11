@@ -95,6 +95,57 @@ export const ProjectStyled = styled.div`
         width: 100%;
       }
     }
+    
+    .light1 {
+      content: '';
+      top: 0;
+      right: 50%;
+      position: absolute;
+      filter: blur(45px);
+      background: radial-gradient(${({ theme }) => hexToRgbA(theme.colors.blue?.L8, 0.4)}, ${({ theme }) => hexToRgbA(theme.colors.blue?.L8, 0.1)}, rgba(1, 65, 255, 0));
+      transform: translateZ(0);
+      width: 500px;
+      height: 500px;
+      z-index: -1;
+      animation: animate1 10s infinite;
+    }
+    .light1 {
+      content: '';
+      top: 10%;
+      left: 50%;
+      position: absolute;
+      filter: blur(45px);
+      background: radial-gradient(${({ theme }) => hexToRgbA(theme.colors.blue?.L8, 0.4)}, ${({ theme }) => hexToRgbA(theme.colors.blue?.L8, 0.1)}, rgba(1, 65, 255, 0));
+      transform: translateZ(0);
+      width: 500px;
+      height: 500px;
+      z-index: -1;
+      animation: animate1 10s infinite;
+    }
+    .light2 {
+      content: '';
+      left: 40%;
+      bottom: 20%;
+      position: absolute;
+      filter: blur(45px);
+      transform: translateZ(0);
+      background: radial-gradient(${({ theme }) => hexToRgbA(theme.colors.rose.L9, 0.25)}, rgba(1, 65, 255, 0));
+      width: 400px;
+      height: 400px;
+      z-index: -1;
+      animation: animate2 10s infinite;
+    }
+    @keyframes animate1 {
+      0%   { opacity: 0.5;}
+      50%   { opacity: 1;}
+      100% { opacity: 0.5;}
+    }
+    
+    @keyframes animate2 {
+      0%   { opacity: 1;}
+      50%   { opacity: 0.5;}
+      100% { opacity: 1;}
+    }
   }
 `
 

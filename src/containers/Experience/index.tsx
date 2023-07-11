@@ -11,6 +11,7 @@ const Experience = () => {
       exit={{ opacity: 0 }}
     >
       <div className="content">
+        <p className="title">Experiences</p>
         <div className="experiences">
           {experiences.map((exp, idx) => (
             <ExperienceItem
@@ -38,6 +39,8 @@ const Experience = () => {
             </ExperienceItem>
           ))}
         </div>
+        <div className="light1" />
+        <div className="light2" />
       </div>
     </ExperienceStyled>
   )
