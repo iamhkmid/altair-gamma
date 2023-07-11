@@ -33,7 +33,7 @@ const FooterStyled = styled.div`
       font-size: 10px;
       font-weight: 500;
       margin: 0;
-      color: ${({ theme }) => theme.colors.text.L5};
+      color: ${({ theme }) => theme.colors.text.L4};
       @media screen and (min-width: ${({ theme }) => theme.breakpoint.sm}px) {
         font-size: 12px;
       }
