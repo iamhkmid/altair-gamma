@@ -8,6 +8,11 @@ interface TOverviewData {
   text1: string
   text2: string[]
   description: string
+  resume: {
+    label: string
+    url: string
+    endIcon: React.ReactElement | null
+  }
   action: Array<{
     key: string
     label: string
@@ -32,6 +37,11 @@ export const overviewData: TOverviewData = {
   text1: "Hi, I'm Luqman",
   text2: ['A', 'FRONTEND', 'WEB', 'DEVELOPER'],
   description: 'Experience helping companies create and maintain code for building interactive and user friendly web application.',
+  resume: {
+    label: 'Download Resume',
+    url: "/static/resume-fe-luqman.pdf",
+    endIcon: <Download />,
+  },
   action: [
     {
       key: '1',
@@ -41,16 +51,6 @@ export const overviewData: TOverviewData = {
       endIcon: null,
       particles: 15,
       animation: true
-    },
-    {
-      key: '2',
-      variant: 'text',
-      label: 'Resume',
-      url: "/static/resume-fe-luqman.pdf",
-      particles: 12,
-      endIcon: <Download />,
-      animation: false,
-      isFile: true
     },
     {
       key: '3',

@@ -98,19 +98,6 @@ export const ProjectStyled = styled.div`
     
     .light1 {
       content: '';
-      top: 0;
-      right: 50%;
-      position: absolute;
-      filter: blur(45px);
-      background: radial-gradient(${({ theme }) => hexToRgbA(theme.colors.blue?.L8, 0.4)}, ${({ theme }) => hexToRgbA(theme.colors.blue?.L8, 0.1)}, rgba(1, 65, 255, 0));
-      transform: translateZ(0);
-      width: 500px;
-      height: 500px;
-      z-index: -1;
-      animation: animate1 10s infinite;
-    }
-    .light1 {
-      content: '';
       top: 10%;
       left: 50%;
       position: absolute;
