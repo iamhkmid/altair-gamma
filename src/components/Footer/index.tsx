@@ -30,11 +30,15 @@ export default Footer
 
 const FooterStyled = styled.div`
   display: flex;
+  position: fixed;
   justify-content: space-between;
   align-items: center;
   width: 100%;
+  left: 0;
+  bottom: 0;
   padding: 0 10px;
   backdrop-filter: blur(5px);
+  z-index: 100;
   background-color: ${({ theme }) => hexToRgbA(theme.colors.blue.L10, 0.2)};
   box-sizing: border-box;
   @media screen and (min-width: ${({ theme }) => theme.breakpoint.md}px) {
