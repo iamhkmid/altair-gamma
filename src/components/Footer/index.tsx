@@ -11,7 +11,7 @@ const Footer = () => {
   return (
     <FooterStyled>
       <div className="footer-left">
-        <p>2023, Build by Muhammad Luqmanul Hakim.</p>
+        <p>2023, Designed & developed by Muhammad Luqmanul Hakim.</p>
       </div>
       <div className="footer-right">
         <div className="media">
@@ -30,13 +30,9 @@ export default Footer
 
 const FooterStyled = styled.div`
   display: flex;
-  position: fixed;
   justify-content: space-between;
   align-items: center;
-  bottom: 0;
-  left: 0;
   width: 100%;
-  z-index: 100;
   padding: 0 10px;
   backdrop-filter: blur(5px);
   background-color: ${({ theme }) => hexToRgbA(theme.colors.blue.L10, 0.2)};

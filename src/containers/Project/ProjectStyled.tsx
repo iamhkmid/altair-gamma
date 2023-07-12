@@ -16,7 +16,7 @@ export const ProjectStyled = styled.div`
   @media screen and (min-width: ${({ theme }) => theme.breakpoint.md}px) {
     padding-top: calc(10vh + 70px);
     padding-bottom: 50px;
-    max-height: calc(100vh - 70px);
+    max-height: calc(100vh - 30px);
   }
 
   &::-webkit-scrollbar {

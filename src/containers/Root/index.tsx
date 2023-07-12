@@ -27,10 +27,10 @@ const Root = () => {
   return (
     <RootStyled>
       <Menu />
-      <Footer />
       <AnimatePresence mode="popLayout">
         <motion.div className="animate-wrapper" key={location.pathname}>
           <AnimatedOutlet />
+          <Footer />
           <GlowBg />
         </motion.div>
       </AnimatePresence>
@@ -48,6 +48,7 @@ const RootStyled = styled.div`
   box-sizing: border-box;
   .animate-wrapper{
     display: flex;
+    flex-direction: column;
     height: 100%;
   }
 `

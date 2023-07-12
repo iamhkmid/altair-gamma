@@ -11,12 +11,9 @@ export const ExperienceStyled = styled(motion.div)`
   max-height: 100%;
   overflow-x: hidden;
   overflow-y: auto;
-  padding-bottom: 130px;
-  padding-top: calc(5vh + 60px);
+  padding-top: calc(5vh + 30px);
   @media screen and (min-width: ${({ theme }) => theme.breakpoint.md}px) {
     padding-top: calc(10vh + 70px);
-    padding-bottom: 50px;
-    max-height: calc(100vh - 70px);
   }
 
   &::-webkit-scrollbar {
