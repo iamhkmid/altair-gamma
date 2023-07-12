@@ -45,7 +45,7 @@ export const overviewData: TOverviewData = {
     {
       key: '2',
       variant: 'text',
-      label: 'CV',
+      label: 'Resume',
       url: "/static/resume-fe-luqman.pdf",
       particles: 12,
       endIcon: <Download />,
