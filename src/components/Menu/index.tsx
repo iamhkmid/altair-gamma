@@ -70,7 +70,7 @@ const Menu = () => {
         <div className="theme">
           <ThemeButton />
         </div>
-        <motion.div className="resume" animate={!isHome ? { maxWidth: 200, opacity: 1 } : { maxWidth: 0, opacity: 0 }}>
+        <motion.div className="resume" animate={!isHome ? { maxWidth: 120, opacity: 1 } : { maxWidth: 0, opacity: 0 }}>
           <ResumeBtn />
         </motion.div>
         <div className="mobile-menu">
