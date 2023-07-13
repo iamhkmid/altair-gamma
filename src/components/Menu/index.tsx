@@ -49,7 +49,7 @@ const Menu = () => {
     <MenuStyled initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ delay: 0.5, duration: 0.7 }}>
       <div className="left">
         <motion.div className="title" animate={{ opacity: !isHome ? 1 : 0 }} onClick={() => navigate("/home")}>
-          <p>{'<MuhammadLuqmanulHakim />'}</p>
+          <p>{'Muhammad Luqmanul Hakim'}</p>
           <p>Frontend Developer</p>
         </motion.div>
       </div>

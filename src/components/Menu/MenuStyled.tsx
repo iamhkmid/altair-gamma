@@ -32,7 +32,7 @@ export const MenuStyled = styled(motion.div)`
     gap: 2px;
     > p:nth-child(1){
       margin: 0;
-      font-size: 13px;
+      font-size: 12px;
       font-weight: 500;
       color: ${({ theme }) => theme.colors.text.L5};
       @media screen and (min-width: ${({ theme }) => theme.breakpoint.sm}px) {
@@ -44,7 +44,7 @@ export const MenuStyled = styled(motion.div)`
     }
     > p:nth-child(2){
       margin: 0;
-      font-size: 12px;
+      font-size: 11px;
       font-weight: 300;
       color: ${({ theme }) => theme.colors.text.L4};
       @media screen and (min-width: ${({ theme }) => theme.breakpoint.sm}px) {
