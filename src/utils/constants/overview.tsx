@@ -2,7 +2,7 @@ import React from 'react'
 import { ReactComponent as Linkedin } from '../../assets/icons/linkedin.svg'
 import { ReactComponent as Instagram } from '../../assets/icons/instagram.svg'
 import { ReactComponent as Github } from '../../assets/icons/github.svg'
-import { ReactComponent as Download } from '../../assets/icons/caret-down.svg'
+import { ReactComponent as Download } from '../../assets/icons/download-outline.svg'
 
 interface TOverviewData {
   text1: string
@@ -38,7 +38,7 @@ export const overviewData: TOverviewData = {
   text2: ['A', 'FRONTEND', 'WEB', 'DEVELOPER'],
   description: 'Experience helping companies create and maintain code for building interactive and user friendly web application.',
   resume: {
-    label: 'Download Resume',
+    label: 'Resume',
     url: "/static/resume-fe-luqman.pdf",
     endIcon: <Download />,
   },
