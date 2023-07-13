@@ -58,6 +58,7 @@ export const MenuStyled = styled(motion.div)`
   .mobile-menu {
     display: flex;
     position: relative;
+    padding-left: 15px;
     @media screen and (min-width: ${({ theme }) => theme.breakpoint.md}px) {
       display: none;
     }
@@ -146,25 +147,29 @@ export const MenuStyled = styled(motion.div)`
     }
   }
   .menu {
-    display: none;
+    display: flex;
     align-items: center;
-    @media screen and (min-width: ${({ theme }) => theme.breakpoint.md}px) {
-      display: flex;
-    }
     
     .theme {
+      display: none;
       padding-left: 20px;
+      @media screen and (min-width: ${({ theme }) => theme.breakpoint.md}px) {
+        display: block;
+      }
     }
     .resume {
       overflow: hidden;
       padding-left: 20px;
     }
     > ul {
-      display: flex;
+      display: none;
       margin: 0;
       padding: 0;
       list-style-type: none;
       gap: 20px;
+      @media screen and (min-width: ${({ theme }) => theme.breakpoint.md}px) {
+        display: flex;
+      }
       > li {
         margin: 0;
         padding: 0;

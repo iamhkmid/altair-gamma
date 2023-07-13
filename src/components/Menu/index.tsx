@@ -53,30 +53,6 @@ const Menu = () => {
           <p>Frontend Developer</p>
         </motion.div>
       </div>
-      <div className="mobile-menu">
-        <motion.div ref={refButton} className="mobile-menu-toggle" onClick={() => { setActiveMenu((prev) => !prev) }}>
-          <MenuIcon />
-        </motion.div>
-        <AnimatePresence>
-          {activeMenu && (
-            <motion.ul ref={refContent} className="mobile-menu-content" variants={mbToggleVariants} initial="hidden" animate="show" exit="hidden">
-              {menu.map((value) => (
-                <li key={value.key}>
-                  <NavLink
-                    to={value.pathname}
-                    className={linkClass}
-                    onClick={() => { setActiveMenu(false) }}
-                  >
-                    <button className="menu-button">{value.label}</button>
-                  </NavLink>
-                  <div className="shadow" />
-                </li>
-              ))}
-              <ThemeButton />
-            </motion.ul>
-          )}
-        </AnimatePresence>
-      </div>
       <div className="menu">
         <ul>
           {menu.map((value) => (
@@ -97,6 +73,30 @@ const Menu = () => {
         <motion.div className="resume" animate={!isHome ? { maxWidth: 200, opacity: 1 } : { maxWidth: 0, opacity: 0 }}>
           <ResumeBtn />
         </motion.div>
+        <div className="mobile-menu">
+          <motion.div ref={refButton} className="mobile-menu-toggle" onClick={() => { setActiveMenu((prev) => !prev) }}>
+            <MenuIcon />
+          </motion.div>
+          <AnimatePresence>
+            {activeMenu && (
+              <motion.ul ref={refContent} className="mobile-menu-content" variants={mbToggleVariants} initial="hidden" animate="show" exit="hidden">
+                {menu.map((value) => (
+                  <li key={value.key}>
+                    <NavLink
+                      to={value.pathname}
+                      className={linkClass}
+                      onClick={() => { setActiveMenu(false) }}
+                    >
+                      <button className="menu-button">{value.label}</button>
+                    </NavLink>
+                    <div className="shadow" />
+                  </li>
+                ))}
+                <ThemeButton />
+              </motion.ul>
+            )}
+          </AnimatePresence>
+        </div>
       </div>
     </MenuStyled>
   )
