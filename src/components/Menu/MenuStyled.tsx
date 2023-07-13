@@ -148,9 +148,16 @@ export const MenuStyled = styled(motion.div)`
   .menu {
     display: none;
     align-items: center;
-    gap: 20px;
     @media screen and (min-width: ${({ theme }) => theme.breakpoint.md}px) {
       display: flex;
+    }
+    
+    .theme {
+      padding-left: 20px;
+    }
+    .resume {
+      overflow: hidden;
+      padding-left: 20px;
     }
     > ul {
       display: flex;

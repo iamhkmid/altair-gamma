@@ -1,10 +1,11 @@
+import React from 'react'
 import { NavLink, useLoaderData, useLocation, useNavigate } from 'react-router-dom'
 import { MenuStyled } from './MenuStyled'
 import { type TRootLoaderData } from '../../containers/Root/Root.types'
 import { AnimatePresence, type Variants, motion } from 'framer-motion'
 import ThemeButton from '../ThemeButton'
 import { ReactComponent as MenuIcon } from '../../assets/icons/menu.svg'
-import React from 'react'
+import ResumeBtn from '../Atoms/ResumeBtn'
 
 interface TLinkClass { isActive: boolean, isPending: boolean }
 
@@ -15,6 +16,7 @@ const Menu = () => {
   const refButton = React.useRef<HTMLDivElement>(null)
   const refContent = React.useRef<HTMLUListElement>(null)
   const navigate = useNavigate()
+
 
   React.useEffect(() => {
     const listener = (event: any) => {
@@ -36,7 +38,7 @@ const Menu = () => {
     return args.isActive ? 'active' : args.isPending ? 'pending' : ''
   }
 
-  const withTitle = location.pathname !== '/home'
+  const isHome = location.pathname === '/home'
 
   const mbToggleVariants: Variants = {
     show: { opacity: 1, y: 35 },
@@ -46,7 +48,7 @@ const Menu = () => {
   return (
     <MenuStyled initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ delay: 0.5, duration: 0.7 }}>
       <div className="left">
-        <motion.div className="title" animate={{ opacity: withTitle ? 1 : 0 }} onClick={() => navigate("/home")}>
+        <motion.div className="title" animate={{ opacity: !isHome ? 1 : 0 }} onClick={() => navigate("/home")}>
           <p>{'<MuhammadLuqmanulHakim />'}</p>
           <p>Frontend Developer</p>
         </motion.div>
@@ -89,7 +91,12 @@ const Menu = () => {
             </li>
           ))}
         </ul>
-        <ThemeButton />
+        <div className="theme">
+          <ThemeButton />
+        </div>
+        <motion.div className="resume" animate={!isHome ? { maxWidth: 200, opacity: 1 } : { maxWidth: 0, opacity: 0 }}>
+          <ResumeBtn />
+        </motion.div>
       </div>
     </MenuStyled>
   )

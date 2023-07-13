@@ -3,10 +3,11 @@ import React from 'react'
 import { motion } from "framer-motion"
 import { OverviewCardStyled, GlowText } from './OverviewStyled'
 import { overviewData } from '../../utils/constants/overview'
-import Button from '../../components/Form/Button'
+import Button from '../../components/Atoms/Button'
 import { downloadFile } from '../../utils/downloadFile'
 import ProfileImage from '../../assets/images/home_img.webp'
 import CircleGradientLoader from '../../components/Loading/CircleGradientLoader'
+import ResumeBtn from '../../components/Atoms/ResumeBtn'
 
 const Overview = () => {
   const [loadImg, setLoadImg] = React.useState(true)
@@ -82,12 +83,7 @@ const Overview = () => {
             ))}
           </div>
           <div className="resume">
-            <div className="download" onClick={() => downloadFile(overviewData.resume.url)}>
-              {overviewData.resume.label}
-              {overviewData.resume.endIcon}
-              <div className="lightbtn1" />
-              <div className="lightbtn2" />
-            </div>
+            <ResumeBtn />
           </div>
           <div className="light1" />
           <div className="light2" />

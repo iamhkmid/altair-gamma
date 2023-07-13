@@ -39,7 +39,6 @@ const ThemeButtonStyled = styled.div`
   overflow: hidden;
   box-sizing: border-box;
   cursor: pointer;
-  width: 100%;
   border-radius: 5px;
   padding: 10px 15px;
   gap: 10px;

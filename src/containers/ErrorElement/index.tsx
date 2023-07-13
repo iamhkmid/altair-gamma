@@ -1,6 +1,6 @@
 import { useNavigate, useRouteError } from 'react-router-dom'
 import { styled } from 'styled-components'
-import Button from '../../components/Form/Button'
+import Button from '../../components/Atoms/Button'
 
 interface TError {
   message: string
