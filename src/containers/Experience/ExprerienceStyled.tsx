@@ -11,7 +11,7 @@ export const ExperienceStyled = styled(motion.div)`
   max-height: 100%;
   overflow-x: hidden;
   overflow-y: auto;
-  padding-top: calc(5vh + 30px);
+  padding-top: calc(5vh + 60px);
   @media screen and (min-width: ${({ theme }) => theme.breakpoint.md}px) {
     padding-top: calc(10vh + 70px);
   }
