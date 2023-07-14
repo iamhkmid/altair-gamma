@@ -14,9 +14,9 @@ export const menu = [
     label: 'Experience',
     pathname: '/experience'
   },
-  {
-    key: '4',
-    label: 'About',
-    pathname: '/about'
-  }
+  // {
+  //   key: '4',
+  //   label: 'About',
+  //   pathname: '/about'
+  // }
 ]
