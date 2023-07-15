@@ -7,7 +7,7 @@ export const experiences = [
     endDate: "Present"
   },
   {
-    role: "Fullstack Developer",
+    role: "Fullstack (Freelance)",
     company: "Penerbit DapurKata | TP3I Universitas Bangka Belitung",
     description: "Develop Book Catalog Website",
     startDate: "2021",
