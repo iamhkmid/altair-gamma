@@ -17,7 +17,7 @@ export const projects = [
   },
   {
     id: '2',
-    title: 'UBB Press',
+    title: 'UBB Press ',
     description: 'UBB Press is a website that provides information about books published by TP3I Universitas Bangka Belitung.',
     development: false,
     projectType: "Book Catalog",
