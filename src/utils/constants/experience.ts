@@ -2,7 +2,7 @@ export const experiences = [
   {
     role: "React JS Developer",
     company: "PT Infosys Solusi Terpadu",
-    description: "Develop and maintenance Internet Banking Website",
+    description: "Develop and maintenance Banking and Finance Website",
     startDate: "Februari 2022",
     endDate: "Present"
   },
