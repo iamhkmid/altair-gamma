@@ -39,7 +39,7 @@ export const overviewData: TOverviewData = {
   description: 'Experience helping companies create and maintain code for building interactive and user friendly web application.',
   resume: {
     label: 'Resume',
-    url: "/static/resume-fe-luqman.pdf",
+    url: "/static/resume-luqman.pdf",
     endIcon: <Download />,
   },
   action: [
